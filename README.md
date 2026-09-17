@@ -1,7 +1,7 @@
 # SAE_BUT_2
 
 pour les branches: 
-git checkout -b nomBranche /n
+git checkout -b nomBranche \n
 Faire les modifs en local
 git add .
 git commit -m "detail des modifs apporté"
