@@ -2,6 +2,7 @@
 
 ## Pour les branches:    
 * git checkout -b nomBranche
+  
 Faire les modifs en local :    
 * git add .  
 * git commit -m "detail des modifs apporté"  
