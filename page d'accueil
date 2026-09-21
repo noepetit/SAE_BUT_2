@@ -37,5 +37,10 @@
                 Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
             </p>
         </div>
+<!--Scroll Top bouton-->
+        <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
+            <span class="arrow"></span>
+        </a>
+        <script src="javascript/main.js"></script>
   </body>
  </html>
