@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue</title>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Notre site présente une description d'un jeu ludique autour de la cybersécurité">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body id="top">
+    <div class = "navbar">
+    <!--navbar-->
+        <div class = "navbarText">
+        <a href="#accueil">Accueil</a>
+            <a href="#explication_du_jeu">Explication du jeu</a>
+            <a href="#démo">Démo</a>
+            <a href="#connexion">Connexion</a>
+            <a href="#inscription">Inscription</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class ="navebarTheme">
+            <img src ="assets/img/theme_clair.png" class = "sun">
+            <img src ="assets/img/theme_sombre.png" class = "moon">
+        </div>
+    </div>
+    <main>
+        <!--Explication du jeu-->
+        <div>
+        <h1>cybercigales</h1>
+        <h2>Découvrez des jeux ludiques sur la cybersécurité</h2>
+            <p>Découvrez l'univers de cybercigales a travers nos jeux ludiques.<br>
+                L'éxperience que nous proposons est une initiation a la cybersécurité à travers des jeux ludiques.<br>
+                Le jeu est un escape game sous forme de ctf(Capture The Flag), le premier a trouver et a prendre le drapeau de l'adversaire gagne.<br>
+                Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
+            </p>
+        </div>
+  </body>
+ </html>
