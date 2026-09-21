@@ -1,0 +1,16 @@
+<!--Contact-->
+        <h2 class="shapeTitle" id="contact">Contact</h2>
+        <div class="shapeForm">
+            <form id="form" action="mailto:thomasserra2@gmail.com?content-type=text/html&amp;subject=Site%20Web"
+                  method="post" enctype="text/plain">
+                <h2> Nous contacter </h2>
+                <p> Si vous souhaitez nous faire part de votre avis ou nous contacter, veuillez remplir le formulaire
+                    ci-dessous</p>
+                <p>
+                    <label for="message">Message: </label><br><textarea id="message" rows="5" cols="50"
+                                                                        required></textarea><br>
+                    <input class="bouton" type="submit" value="Envoyer">
+                </p>
+            </form>
+        </div>
+    </main>
