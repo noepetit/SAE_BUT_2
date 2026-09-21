@@ -1,6 +1,17 @@
 <?php
-ini_set('display_errors', '1');
-error_reporting(E_ALL);
-require 'Assets/Includes/autoloader.php';
 
-(new \App\Controllers\Home\homeController())->execute();
+require __DIR__ . '/Assets/Includes/autoloader.php';
+
+try {
+    if (filter_input(INPUT_GET, 'action')) {
+        if ($_GET['action'] === 'register') {
+            (new \App\Controllers\Register\RegisterController())->execute();
+            exit;
+        }
+        throw new ControllerException('La page que vous recherchez n\'existe pas');
+    }
+
+    (new \App\Controllers\Home\HomeController())->execute();
+} catch (ControllerException $e) {
+    (new \App\Views\Error($e->getMessage()))->show();
+}
