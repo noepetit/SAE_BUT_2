@@ -1,0 +1,20 @@
+ <!--Connexion-->
+        <h2 class="shapeTitle" id="connexion">Connexion</h2>
+        <div class="shapeForm">
+            <p>
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" autocomplete="nom d'utilisateur" required>
+            </p>
+
+            <p>
+                <label for="login-password">Mots de passe</label>
+                <input type="password" id="login-password" name="mots_de_passe" autocomplete="mots de passe" required>
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" name="se_souvenir" value="yes"> Se souvenir de moi
+                </label>
+            </p>
+            <button type="submit">Se connecter</button>
+        </div>
