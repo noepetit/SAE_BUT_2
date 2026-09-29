@@ -1,0 +1,32 @@
+name: Deploy website
+
+on:
+  push:
+    branches:
+      - site/main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get wsbuilder
+        run: |
+          curl -fo wsbuilder https://raw.githubusercontent.com/Alexandre-SBEGHEN/Website-Builder/main/wsbuilder
+          chmod +x wsbuilder
+
+      - name: Build website
+        run: ./wsbuilder --css-minify --js-minify ./
+
+      - name: SFTP upload
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: ${{secrets.SSH_HOST}}
+          username: ${{secrets.SSH_USER}}
+          password: ${{secrets.SSH_PWD}}
+          port: 22
+          uploads: |
+            ./build => ./www/
+          delete: 'true'
+# si changement de index.php dans un repertoire, changer ./build avec le nom du repertoir et revoir branch lier au site.
