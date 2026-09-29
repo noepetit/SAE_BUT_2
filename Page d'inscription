@@ -1,0 +1,57 @@
+ <!--Inscription-->
+        <h2 class="shapeTitle" id="Inscription">inscription</h2>
+        <div class="shapeForm">
+            <form action="/register" method="post">
+                <fieldset>
+                    <h2>Créer un compte</h2>
+
+                    <p>
+                        <label for="reg-name">Nom complet</label>
+                        <input type ="text" id="reg-name" name="nom_complet" autocomplete="Nom Prénom" required>
+                    </p>
+
+                    <p>
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" name="email" autocomplete="napoleonbonaparte@gmail.com" required>
+                    </p>
+
+                    <p>
+                        <label for="reg-password">Mots de passe</label>
+                        <input type="password" id="reg-password" name="mots_de_passe" autocomplete="Mots de passe" required>
+                    </p>
+
+                    <p>
+                        <label for="reg-country">Country</label>
+                        <select id="reg-country" name="Pays" autocomplete="France" required>
+                            <option value="">Choisir</option>
+                            <option value="us">États-Unis</option>
+                            <option value="fr">France</option>
+                            <option value="gb">Royaume-Uni</option>
+                            <option value="de">Allemagne</option>
+                            <option value="es">Espagne</option>
+                            <option value="it">Italie</option>
+                            <option value="mh">Îles Marshall</option>
+                            <option value="other">autre</option>
+                        </select>
+                    </p>
+                    <fieldset>
+                        <h2>Type de compte</h2>
+                        <p>
+                            <label>
+                                <input type="radio" name="type_de_compte" value="personnel" checked> Personnel
+                            </label>
+                            <label>
+                                <input type="radio" name="type_de_compte" value="entreprise" checked> Entreprise
+                            </label>
+                        </p>
+                    </fieldset>
+                    <p>
+                        <label>
+                            <input type="checkbox" name="terme" value="accepter" required> J'accepte les termes
+                        </label>
+                    </p>
+                    <button type="submit">Enregistrer</button>
+                </fieldset>
+            </form>
+            accèpte
+        </div>
