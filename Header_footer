@@ -1,12 +1,12 @@
 <?php
-function renderHeader(string $title = 'Mon site Web'): void {
+function Header($title = 'CyberCigales'): void {
     ?>
     <!DOCTYPE html>
     <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?= htmlspecialchars($title) ?></title>
+        <title><?php echo $title; ?></title>
         <style>
             body { font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
             header { background: #333; color: #fff; padding: 1rem; }
@@ -17,7 +17,7 @@ function renderHeader(string $title = 'Mon site Web'): void {
     </head>
     <body>
         <header>
-            <h1><?= htmlspecialchars($title) ?></h1>
+            <h1><?php echo $title ?></h1>
             <nav>
                 <a href="index.php">Accueil</a>
                 <a href="a-propos.php">À propos</a>
@@ -29,11 +29,11 @@ function renderHeader(string $title = 'Mon site Web'): void {
         <main>
     <?php
 }
-function renderFooter(): void {
+function Footer(): void {
     ?>
         </main>
         <footer>
-            <p>&copy; <?= date('Y') ?> - Tous droits réservés.</p>
+            <p>&copy; <?= date('Y') ?> - Tous droits réservés (sauf si vous faites partie de la communauté des tenracs) .</p>
         </footer>
     </body>
     </html>
