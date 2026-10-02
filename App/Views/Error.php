@@ -4,11 +4,8 @@ namespace App\Views;
 
 class Error
 {
-    private $message;
-
-    public function __construct(string $message)
+    public function __construct(private string $message)
     {
-        $this->message = $message;
     }
 
     public function show(): void
