@@ -6,3 +6,4 @@ SAE_BUT_2/.idea/
 .env
 .env.*
 *.db
+config.php
