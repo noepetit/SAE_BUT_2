@@ -39,4 +39,3 @@
             overlay.remove();
         });
     }
-});
