@@ -7,9 +7,25 @@
     <meta name="description"
           content="Notre site présente une description d'un jeu ludique autour de la cybersécurité">
     <link rel="stylesheet" href="css/styles.css">
+
 </head>
-<body>
-   <?php  Header('CyberCigales') ?> 
+
+<body id="top">
+    <div class = "navbar">
+    <!--navbar-->
+        <div class = "navbarText">
+        <a href="#accueil">Accueil</a>
+            <a href="#explication_du_jeu">Explication du jeu</a>
+            <a href="#démo">Démo</a>
+            <a href="#connexion">Connexion</a>
+            <a href="#inscription">Inscription</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class ="navebarTheme">
+            <img src ="assets/img/theme_clair.png" class = "sun">
+            <img src ="assets/img/theme_sombre.png" class = "moon">
+        </div>
+    </div>
     <main>
         <!--Explication du jeu-->
         <div>
@@ -21,6 +37,10 @@
                 Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
             </p>
         </div>
+<!--Scroll Top bouton-->
+        <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
+            <span class="arrow"></span>
+        </a>
+        <script src="javascript/main.js"></script>
   </body>
-  <?php Footer()?>
  </html>

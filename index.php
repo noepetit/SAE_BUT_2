@@ -1,5 +1,7 @@
 <?php
 
+use Assets\Includes\Exceptions\ControllerException;
+
 require __DIR__ . '/Assets/Includes/autoloader.php';
 
 try {
@@ -8,6 +10,11 @@ try {
             (new \App\Controllers\Register\RegisterController())->execute();
             exit;
         }
+        if ($_GET['action'] === 'login') {
+            (new \App\Controllers\Login\LoginController())->execute();
+            exit;
+        }
+
         if ($_GET['action'] === 'logout') {
             (new \App\Controllers\Logout\LogoutController())->execute();
             exit;

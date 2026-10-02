@@ -28,6 +28,6 @@ class Login
 
         <?php
 
-        echo ob_get_clean();
+        (new Layout('Connexion - CyberCigales', ob_get_clean()))->show();
     }
 }
