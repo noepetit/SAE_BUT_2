@@ -4,6 +4,7 @@ namespace App\Views;
 
 class Layout
 {
+public function __construct(private string $title, private string $content) {}
 public function show(): void
 {
 ?><!DOCTYPE html>
