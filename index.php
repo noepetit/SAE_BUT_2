@@ -1,5 +1,7 @@
 <?php
 
+use Assets\Includes\Exceptions\ControllerException;
+
 require __DIR__ . '/Assets/Includes/autoloader.php';
 
 try {

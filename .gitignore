@@ -1,6 +1,6 @@
 .DS_Store
 .vscode/
-.idea/
+SAE_BUT_2/.idea/
 
 # sensible
 .env
