@@ -1,6 +1,6 @@
 <?php
 namespace App\Views;
-class Connexion
+class Login
 {
     public function show(): void
     {
