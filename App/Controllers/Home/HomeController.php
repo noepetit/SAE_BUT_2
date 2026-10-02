@@ -6,6 +6,6 @@ class HomeController
 {
     public function execute(): void
     {
-        (new \App\Views\home())->show();
+        (new \App\Views\HomeView())->show();
     }
 }
