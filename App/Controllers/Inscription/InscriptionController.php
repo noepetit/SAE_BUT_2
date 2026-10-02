@@ -44,7 +44,7 @@ if (isset($_POST['ok'])) {
     $sql = "INSERT INTO users(email, username, first_name, last_name, password) 
             VALUES(:email, :username, :firstname, :lastname, :password)";
 
-    $requete = $bdd->prepare($sql);
+                $requete = $bdd->prepare($sql);
 
     $succes = $requete->execute([
         ':email'      => $email,
