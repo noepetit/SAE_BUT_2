@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form method="POST" action="traitement.php">
+<form method="POST" action="../Controllers/Inscription/InscriptionController.php">
     <label for="nom">Votre nom</label>
     <input type="text" id="nom" name="nom" placeholder="Entrez votre nom ..." required>
     <br />
