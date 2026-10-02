@@ -8,6 +8,10 @@ try {
             (new \App\Controllers\Register\RegisterController())->execute();
             exit;
         }
+        if ($_GET['action'] === 'logout') {
+            (new \App\Controllers\Logout\LogoutController())->execute();
+            exit;
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
