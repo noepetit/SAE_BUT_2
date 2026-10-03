@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/Assets/Includes/autoload.php';
+require __DIR__ . '/Assets/Includes/autoloader.php';
 
 use APP\Models\Database;
 try {
