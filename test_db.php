@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/Assets/Includes/autoloader.php';
 
-use APP\Models\Database;
+use App\Models\Database;
 try {
     Database::getInstance()->getConnection();
     echo 'connected';
