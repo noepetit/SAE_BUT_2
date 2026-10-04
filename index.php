@@ -5,11 +5,11 @@ session_start();
 use Assets\Includes\Exceptions\ControllerException;
 
 require __DIR__ . '/Assets/Includes/autoloader.php';
-
+session_start();
 try {
     if (filter_input(INPUT_GET, 'action')) {
         if ($_GET['action'] === 'register') {
-            (new \App\Controllers\Register\RegisterController())->execute();
+            (new \App\Controllers\Inscription\InscriptionController())->execute();
             exit;
         }
         if ($_GET['action'] === 'login') {
