@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 use Assets\Includes\Exceptions\ControllerException;
 
 require __DIR__ . '/Assets/Includes/autoloader.php';
@@ -25,4 +27,6 @@ try {
     (new \App\Controllers\Home\HomeController())->execute();
 } catch (ControllerException $e) {
     (new \App\Views\Error($e->getMessage()))->show();
+} catch (\RuntimeException $e) {
+    (new \App\Views\Error('Erreur de connexion à la base de données'))->show();
 }
