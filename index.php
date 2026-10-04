@@ -11,12 +11,12 @@ try {
             exit;
         }
         if ($_GET['action'] === 'login') {
-            (new \App\Controllers\Login\LoginController())->execute();
+            (new \App\Controllers\Login\LoginController())->execute();      // mettre bon chemin quand finit
             exit;
         }
 
         if ($_GET['action'] === 'logout') {
-            (new \App\Controllers\Logout\LogoutController())->execute();
+            (new \App\Controllers\Logout\LogoutController())->execute();    // mettre bon chemin quand finit
             exit;
         }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
