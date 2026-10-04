@@ -1,6 +1,6 @@
 <?php
 namespace App\Views;
-class Login
+class LoginView
 {
     public function show(): void
     {

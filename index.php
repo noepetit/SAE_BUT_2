@@ -1,9 +1,5 @@
 <?php
-
-session_start();
-
 use Assets\Includes\Exceptions\ControllerException;
-
 require __DIR__ . '/Assets/Includes/autoloader.php';
 session_start();
 try {
