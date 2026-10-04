@@ -17,6 +17,10 @@ try {
             (new \App\Controllers\Logout\LogoutController())->execute();    // mettre bon chemin quand finit
             exit;
         }
+        if ($_GET['action'] === 'forgotPassword') {
+            (new \App\Controllers\ForgotPassword\ForgotPasswordController())->execute();
+            exit;
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
