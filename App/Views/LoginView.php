@@ -27,7 +27,7 @@ class LoginView
                 <button type="submit">Se connecter</button>
             </form>
             <div>
-                <a href="#">Mot de passe oublié ?</a>
+                <a href="index.php?action=forgotPassword">Mot de passe oublié ?</a>
                 <br>
                 <a href="#">Pas encore inscrit ? S'inscrire</a>
             </div>
