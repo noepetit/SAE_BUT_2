@@ -33,9 +33,15 @@ public function show(): void
     <h1><?= htmlspecialchars($this->title); ?></h1>
     <nav>
         <a href="/index.php">Accueil</a>
-        <a href="/index.php?action=register">S'inscrire</a>
-        <a href="/index.php?action=login">Se connecter</a>
-        <a href="/index.php?action=mention">Mentions légales</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <!-- Page dispo connecté -->
+            <a href="/index.php?action=profil">Profil</a>
+            <a href="/index.php?action=logout">Se déconnecter</a>
+        <?php else: ?>
+            <!-- Pages dispo deconnecté -->
+            <a href="/index.php?action=register">S'inscrire</a>
+            <a href="/index.php?action=login">Se connecter</a>
+        <?php endif; ?>
     </nav>
 </header>
 <main>
