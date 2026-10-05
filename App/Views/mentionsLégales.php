@@ -1,0 +1,108 @@
+<?php
+$pageTitle = 'Mentions légales';
+$cardClass = 'card-wide';   // cadre plus large pour un texte long
+require __DIR__ . '/header_footer.php';
+?>
+<head>
+    <meta charset="UTF-8">
+    <title><?= htmlspecialchars($pageTitle ?? 'CyberCigales') ?></title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<h1>Mentions légales</h1>
+<p class="subtitle">Dernière mise à jour : [JJ/MM/AAAA]</p>
+
+<section class="legal">
+
+    <h2>Éditeur du site</h2>
+    <p>
+        Ce site est réalisé dans le cadre d'un projet pédagogique de deuxième année
+        de BUT Informatique à l'IUT Aix Marseille.<br>
+        Responsables de la publication : Keokham Rayan, Petit Noé, Rahmane ABdel, Serra Thomas,  Tastet Timéo.<br>
+        Contact : <a href="mailto:[adresse@mail.fr]">cybercigales@gmail.com</a>
+    </p>
+
+    <h2>Statut du site</h2>
+    <p>
+        Ce site est un projet étudiant à but non commercial. Il est réalisé
+        sous la supervision de Martin Nevot Mickael et n'a pas de vocation
+        économique.
+    </p>
+
+    <h2>Conception et réalisation</h2>
+    <p>
+        Site conçu et développé par Keokham Rayan, Petit Noé, Rahmane ABdel, Serra Thomas,  Tastet Timéo en PHP, HTML, CSS
+        et SQL, selon une architecture MVC (Modèle – Vue – Contrôleur).
+    </p>
+
+    <h2>Hébergement</h2>
+    <p>
+        AlwaysData<br>
+        91 rue du Faubourg Saint-Honoré, 75008 Paris<br>
+        Site web :https://www.alwaysdata.com
+    </p>
+
+    <h2>Contenu et responsabilité</h2>
+    <p>
+        Les informations proposées sur ce site sont données à titre indicatif.
+        Elles peuvent contenir des erreurs ou des omissions et être modifiées
+        sans préavis. Les éditeurs ne peuvent être tenus responsables de
+        l'usage qui en est fait.
+    </p>
+    <p>
+        Le site peut contenir des liens vers d'autres sites. Les éditeurs
+        n'exercent aucun contrôle sur leur contenu et déclinent toute
+        responsabilité à leur sujet.
+    </p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>
+        Les textes, images, logos et le code source de ce site sont protégés par
+        le droit d'auteur. Toute reproduction ou diffusion, totale ou partielle,
+        sans autorisation préalable des éditeurs est interdite, sauf mention
+        contraire.
+        Seules les personnes disposant du titre de membre d'un des groupes de tenrac dérogent à la règle précédente.
+    </p>
+    <p>
+        Les ressources de tiers (images, polices, bibliothèques) restent la
+        propriété de leurs auteurs et sont utilisées selon leurs licences.
+    </p>
+
+    <h2>Données personnelles</h2>
+    <p>
+        Ce site collecte uniquement les données nécessaires à son fonctionnement :
+        (adresse email, nom, prénom, ...). Les mots de passe sont stockés sous
+        forme <strong>hachée</strong> et ne sont jamais lisibles.
+    </p>
+    <p>
+        Lors d'une demande de réinitialisation de mot de passe, un jeton temporaire
+        est généré, puis supprimé après usage.
+    </p>
+    <p>
+        Les données ne sont ni vendues ni transmises à des tiers. Conformément
+        au Règlement général sur la protection des données (RGPD) et à la loi
+        « Informatique et Libertés » du 6 janvier 1978, vous disposez d'un droit
+        d'accès, de rectification, d'effacement et d'opposition concernant vos
+        données. Pour l'exercer, contactez-nous à
+        <a href="mailto:[adresse@mail.fr]">cybercigales@gmail.com</a>.
+        En cas de désaccord, vous pouvez saisir la
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.
+    </p>
+
+    <h2>Signaler un contenu</h2>
+    <p>
+        Si vous constatez une erreur ou un contenu illicite, merci de nous le
+        signaler à l'adresse de contact ci-dessus afin que nous puissions y remédier.
+    </p>
+
+    <h2>Modification des mentions légales</h2>
+    <p>
+        Les éditeurs peuvent modifier ces mentions à tout moment. Nous vous
+        invitons à les consulter régulièrement.
+    </p>
+
+</section>
+
+<p class="back"><a href="index.php?action=login">← Retour à la connexion</a></p>
+
+<?php require __DIR__ . '/layout_footer.php'; ?>
