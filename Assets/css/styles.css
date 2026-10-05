@@ -1,0 +1,168 @@
+:root {
+    --black: #111;
+    --white: #fff;
+    --gray-light: #f4f4f4;
+    --gray-mid: #ccc;
+    --gray-dark: #555;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+a:hover {
+    border-bottom-color: var(--black);
+}
+
+/*  Header */
+header {
+    background: var(--black);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+nav a {
+    color: var(--white);
+    margin-left: 1.5rem;
+    border-bottom-color: transparent;
+}
+
+nav a:hover {
+    border-bottom-color: var(--white);
+}
+
+/*  Main  */
+main {
+    flex: 1;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+main section h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+main section h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--gray-dark);
+    margin-top: 0;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: var(--black);
+    color: var(--gray-mid);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+}
+
+/* Login*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-mid);
+    background: var(--white);
+    color: var(--black);
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--black);
+}
+
+form button {
+    padding: 0.85rem;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+/* Page d'erreur */
+main section.error {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+/*  Scroll to top */
+.scrollTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+}
+
+.scrollTop .arrow {
+    border: solid var(--black);
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(-135deg);
+}
