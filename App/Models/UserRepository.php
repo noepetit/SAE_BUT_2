@@ -1,0 +1,32 @@
+<?php
+namespace App\Models;
+use PDO;
+
+class UserRepository
+{
+    public function __construct(private PDO $connection) {}
+    // Fonction de création d'un utilisateur
+    public function createUser(string $email, string $username, string $first_name, string $last_name, string $pwdHash): void
+    {
+        $statement = $this->connection->prepare('INSERT INTO Users (email, username, first_name, last_name, pwd_hash) VALUES (?, ?, ?, ?, ?)');
+        $statement->execute([$email, $username, $first_name, $last_name, $pwdHash]);
+    }
+    // Fonction pour retrouver un utilisateur selon un email
+    public function findByEmail(string $email): ?object
+    {
+        $statement = $this->connection->prepare('SELECT id, email, username, first_name, last_name, pwd_hash FROM Users WHERE email = ?');
+        $statement->execute([$email]);
+        return $statement->fetchObject() ?: null;
+    }
+    // Vérification si l'email ou l'username est deja utilisé
+    // (la bd à déjà UNIQUE sur email  et username, ixi on cherche à controler la réponses)
+    public function emailOrUsernameExist(string $email, string $username): bool
+    {
+        $statement = $this->connection->prepare('SELECT COUNT(*) FROM Users WHERE email = ? OR username = ?');
+        $statement->execute([$email, $username]);
+        if ($statement->fetchColumn() > 0) {
+            return true;
+        }
+        return false;
+    }
+}

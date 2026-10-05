@@ -4,7 +4,12 @@ namespace App\Views;
 
 class Layout
 {
-public function __construct(private string $title, private string $content) {}
+private string $content;private string $title;public function __construct(string $title, string $content)
+{
+    $this->title = $title;
+    $this->content = $content;
+}
+
 public function show(): void
 {
 ?><!DOCTYPE html>
@@ -12,7 +17,9 @@ public function show(): void
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notre site présente une description d'un jeu ludique autour de la cybersécurité">
     <title><?= htmlspecialchars($this->title); ?></title>
+    <link rel="stylesheet" href="/Assets/css/styles.css">
     <style>
         body { font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
         header { background: #333; color: #fff; padding: 1rem; }
@@ -21,12 +28,11 @@ public function show(): void
         footer { background: #222; color: #aaa; text-align: center; padding: 1rem; }
     </style>
 </head>
-<body>
+<body id="top">
 <header>
     <h1><?= htmlspecialchars($this->title); ?></h1>
     <nav>
         <a href="/index.php">Accueil</a>
-        <a href="/index.php?action=contact">Contact</a>
         <a href="/index.php?action=register">S'inscrire</a>
         <a href="/index.php?action=login">Se connecter</a>
     </nav>
@@ -37,6 +43,7 @@ public function show(): void
 <footer>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
 </footer>
+<script src="/Assets/Scripts/konami.js"></script>
 </body>
 </html>
 <?php
