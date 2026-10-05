@@ -4,5 +4,5 @@ SAE_BUT_2/.idea/
 
 # sensible
 .env
-.env.*
 *.db
+config.php
