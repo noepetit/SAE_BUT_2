@@ -10,7 +10,7 @@ class PasswordResetRepository
     public function createResetToken(int $user_id, string $token_hash): void
     {
         $statement = $this->connection->prepare(
-            'INSERT INTO password_resets (user_id, token, expires_at)
+            'INSERT INTO password_reset (user_id, token, expires_at)
              VALUES (?, ?, NOW() + INTERVAL 30 MINUTE)
              ON DUPLICATE KEY UPDATE
                  token = ?,
@@ -23,7 +23,7 @@ class PasswordResetRepository
     public function findValidByToken(string $token_hash): ?object
     {
         $statement = $this->connection->prepare(
-            'SELECT user_id FROM password_resets
+            'SELECT user_id FROM password_reset
              WHERE token = ? AND expires_at > NOW()
              LIMIT 1 FOR UPDATE'
         );
@@ -34,7 +34,7 @@ class PasswordResetRepository
     public function deleteByUserId(int $userId): void
     {
         $statement = $this->connection->prepare(
-            'DELETE FROM password_resets WHERE user_id = ?'
+            'DELETE FROM password_reset WHERE user_id = ?'
         );
         $statement->execute([$userId]);
     }
@@ -42,7 +42,7 @@ class PasswordResetRepository
     public function deleteToken(string $token_hash): void
     {
         $statement = $this->connection->prepare(
-            'DELETE FROM password_resets WHERE token = ?'
+            'DELETE FROM password_reset WHERE token = ?'
         );
         $statement->execute([$token_hash]);
     }
