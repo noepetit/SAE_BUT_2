@@ -29,7 +29,7 @@ class LoginView
             <div>
                 <a href="index.php?action=forgotPassword">Mot de passe oublié ?</a>
                 <br>
-                <a href="#">Pas encore inscrit ? S'inscrire</a>
+                <a href="index.php?action=register">Pas encore inscrit ? S'inscrire</a>
             </div>
         </section>
 
