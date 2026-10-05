@@ -29,4 +29,9 @@ class UserRepository
         }
         return false;
     }
+    public function updatePwd(int $id, string $newPwdHash): void
+    {
+        $statement = $this->connection->prepare('UPDATE Users SET pwd_hash = ? WHERE id = ?');
+        $statement->execute([$newPwdHash, $id]);
+    }
 }
