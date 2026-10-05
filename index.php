@@ -21,6 +21,10 @@ try {
             (new \App\Controllers\ForgotPassword\ForgotPasswordController())->execute();
             exit;
         }
+        if ($_GET['action'] === 'resetPassword') {
+            (new \App\Controllers\ResetPassword\ResetPasswordController())->execute();
+            exit;
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
