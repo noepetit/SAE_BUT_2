@@ -13,12 +13,21 @@ try {
             exit;
         }
 
+        if ($_GET['action'] === 'profil') {
+            (new \App\Controllers\Profil\ProfilController())->execute();
+            exit;
+        }
+
         if ($_GET['action'] === 'logout') {
             (new \App\Controllers\Logout\LogoutController())->execute();    // mettre bon chemin quand finit
             exit;
         }
         if ($_GET['action'] === 'forgotPassword') {
             (new \App\Controllers\ForgotPassword\ForgotPasswordController())->execute();
+            exit;
+        }
+        if ($_GET['action'] === 'resetPassword') {
+            (new \App\Controllers\ResetPassword\ResetPasswordController())->execute();
             exit;
         }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
