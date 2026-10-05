@@ -19,6 +19,10 @@ try {
             (new \App\Controllers\Logout\LogoutController())->execute();
             exit;
         }
+        if ($_GET['action'] === 'mention') {
+            (new \App\Views\mentionLégales)->execute();
+            exit;
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
