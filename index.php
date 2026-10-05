@@ -13,6 +13,11 @@ try {
             exit;
         }
 
+        if ($_GET['action'] === 'profil') {
+            (new \App\Controllers\Profil\ProfilController())->execute();
+            exit;
+        }
+
         if ($_GET['action'] === 'logout') {
             (new \App\Controllers\Logout\LogoutController())->execute();    // mettre bon chemin quand finit
             exit;

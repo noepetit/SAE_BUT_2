@@ -18,6 +18,14 @@ class UserRepository
         $statement->execute([$email]);
         return $statement->fetchObject() ?: null;
     }
+
+    // Fonction pour retrouver un utilisateur selon son ID
+    public function findById(int $id): ?object
+    {
+        $statement = $this->connection->prepare('SELECT id, email, username, first_name, last_name FROM Users WHERE id = ?');
+        $statement->execute([$id]);
+        return $statement->fetchObject() ?: null;
+    }
     // Vérification si l'email ou l'username est deja utilisé
     // (la bd à déjà UNIQUE sur email  et username, ixi on cherche à controler la réponses)
     public function emailOrUsernameExist(string $email, string $username): bool
