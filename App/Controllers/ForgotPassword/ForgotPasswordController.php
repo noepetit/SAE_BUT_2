@@ -24,7 +24,7 @@ class ForgotPasswordController
             $email = trim(filter_input(INPUT_POST, 'email') ?: '');
 
             if (!hash_equals($_SESSION['password_csrf'], $csrfToken)) {
-                $errors['global'] = 'Formulaire invalide. Rechargez la page.';
+                $errors['global'] = 'Formulaire invalide.';
             } elseif (strlen($email) > 255 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors['global'] = 'Entrez une adresse e-mail valide.';
             } else {
@@ -43,17 +43,16 @@ class ForgotPasswordController
                             $token = bin2hex(random_bytes(32));
                             $tokenHash = hash('sha256', $token);
 
-                            if ($resetRepository->createRequest($user->id, $tokenHash)) {
-                                $link = rtrim($config['site_url'], '/') . '/index.php?action=resetPassword&token=' . $token;
-                                $body = "Bonjour,\n\nPour choisir un nouveau mot de passe :\n" . $link . "\n\nCe lien expire dans 30 minutes.\n" . "Si vous n'avez pas fait cette demande, ignorez cet e-mail.\n";
-                                $headers = [
-                                    'From' => $config['mail_from'],
-                                    'Content-Type' => 'text/plain; charset=UTF-8'
-                                ];
-                                $sent = mail($user->email, 'CyberCigales - Mot de passe oublie', $body, $headers);
-                                if (!$sent) {
-                                    $resetRepository->deleteToken($tokenHash);
-                                }
+                            $resetRepository->createResetToken($user->id, $tokenHash);
+                            $link = rtrim($config['site_url'], '/') . '/index.php?action=resetPassword&token=' . $token;
+                            $body = "Bonjour,\n\nPour choisir un nouveau mot de passe :\n" . $link . "\n\nCe lien expire dans 30 minutes.\n";
+                            $headers = [
+                                'From' => $config['mail_from'],
+                                'Content-Type' => 'text/plain; charset=UTF-8'
+                            ];
+                            $sent = mail($user->email, 'CyberCigales - Mot de passe oublie', $body, $headers);
+                            if (!$sent) {
+                                $resetRepository->deleteToken($tokenHash);
                             }
                         }
                     } catch (\Throwable $e) {
@@ -66,3 +65,4 @@ class ForgotPasswordController
         (new ForgotPasswordView($errors, $email, $message, $_SESSION['password_csrf']))->show();
     }
 }
+
