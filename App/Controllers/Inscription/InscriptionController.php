@@ -1,67 +1,78 @@
 <?php
-session_start();
+namespace App\Controllers\Inscription;
+use Assets\Includes\Database;
+use App\Models\UserRepository;
+use App\Views\InscriptionView;
+use Assets\Includes\Exceptions\ControllerException;
+use PDOException;
 
-$config = require('config.php');
-
-
-try {
-    $bdd = new PDO(
-        "mysql:host=" . $config['host'] . ";dbname=" . $config['dbname'] . ";charset=utf8mb4",
-        $config['user'],
-        $config['password']
-    );
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
-
-if (isset($_POST['ok'])) {
-    if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'] ?? '', $_POST['csrf_token'])) {
-        die("Requête invalide.");
-    }
-
-    $nom       = trim($_POST['nom'] ?? '');
-    $prenom    = trim($_POST['prenom'] ?? '');
-    $user_name = trim($_POST['user'] ?? '');
-    $email     = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
-    $pwd_brut  = $_POST['password'] ?? '';
-
-    if ($nom = '' || $prenom = '' || strlen($user_name) < 3 || $email == false || strlen($pwd_brut) < 8) {
-        echo "Veuillez remplir le formulaire.";
-        exit();
-    }
-
-    $verif = $bdd->prepare("SELECT COUNT(*) FROM users WHERE email = :email OR username = :username");
-    $verif->execute([':email' => $email, ':username' => $user_name]);
-
-    if ($verif->fetchColumn() > 0) {
-        echo "Cet email ou username est déjà pris.";
-        exit();
-    }
-
-    $hashed_password = password_hash($pwd_brut, PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO users(email, username, first_name, last_name, password) 
-            VALUES(:email, :username, :firstname, :lastname, :password)";
-
-                $requete = $bdd->prepare($sql);
-
-    $succes = $requete->execute([
-        ':email'      => $email,
-        ':username'   => $user_name,
-        ':first_name' => $prenom,
-        ':last_name'  => $nom,
-        ':pwd'        => $hashed_password
-    ]);
-
-    if ($succes) {
+class InscriptionController
+{
+    public function execute(): void
+    {
+        $userRepository = new UserRepository(Database::getInstance()->getConnection());
+        $errors = [];
+        $old = [];
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            return;
+        }
+        $token = $_POST["csrf_token"] ?? '';
+        if ($token === '' || !hash_equals($_SESSION['csrf_token'] ?? '', $token)) {
+            throw new ControllerException('requete invalide');
+        }
+        $last_name = trim($_POST['last_name'] ?? '');
+        $first_name = trim($_POST['first_name'] ?? '');
+        $username = trim($_POST['username'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $password = $_POST['password'] ?? '';
+        $old = [
+            'last_name' => $last_name,
+            'first_name' => $first_name,
+            'username' => $username,
+            'email' => $email
+        ];
+        // géstion erreur coté serveurs
+        if ($last_name === '' || mb_strlen($last_name) > 50) {
+            $errors['last_name'] = 'Le nom est invalide';
+        }
+        if ($first_name === '' || mb_strlen($first_name) > 50) {
+            $errors['first_name'] = 'Le prenom est invalide';
+        }
+        if (mb_strlen($username) <3 || mb_strlen($username) > 50) {
+            $errors['username'] = 'L\'username est invalide';
+        }
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false || mb_strlen($email) > 255) {
+            $errors['email'] = 'L\'email est invalide';
+        }
+        if (mb_strlen($password) < 8) {
+            $errors['password'] = 'Le mot de passe est trop court';
+        }
+        if (!empty($errors)) {
+            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            return;
+        }
+        if ($userRepository->emailOrUsernameExist($email, $username)) {
+            $errors['global'] ='Email ou username existant';
+            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            return;
+        }
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        try{
+            $userRepository->createUser($email, $username, $first_name, $last_name, $hashedPassword);
+        }catch(PDOException $e){
+            if ($e->getCode() === '23000') {
+                $errors['global'] = 'Email ou username existant';
+            }else {
+                error_log($e->getMessage());
+                $errors['global'] = 'une erreur est survenue';
+            }
+            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            return;
+        }
         unset($_SESSION['csrf_token']);
-        echo "<p style='color: green;'>Compte créé avec succès !</p>";
-    } else {
-        echo "<p style='color: red;'>Erreur lors de l'enregistrement.</p>";
+        header('Location: index.php?action=login');
+        exit();
     }
-} else {
-    echo "<p style='color: red;'>Veuillez remplir tous les champs correctement (vérifiez notamment l'email).</p>";
 }
-
-?>
