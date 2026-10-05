@@ -29,6 +29,7 @@ public function show(): void
         <a href="/index.php?action=contact">Contact</a>
         <a href="/index.php?action=register">S'inscrire</a>
         <a href="/index.php?action=login">Se connecter</a>
+        <a href="/index.php?action=mention">Mentions légales</a>
     </nav>
 </header>
 <main>
