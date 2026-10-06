@@ -37,6 +37,7 @@ public function show(): void
             <!-- Page dispo connecté -->
             <a href="/index.php?action=profil">Profil</a>
             <a href="/index.php?action=logout">Se déconnecter</a>
+            <a href="/index.php?action=mention">Mentions légales</a>
         <?php else: ?>
             <!-- Pages dispo deconnecté -->
             <a href="/index.php?action=register">S'inscrire</a>
