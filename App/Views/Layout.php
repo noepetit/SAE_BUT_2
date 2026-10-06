@@ -41,6 +41,7 @@ public function show(): void
             <!-- Pages dispo deconnecté -->
             <a href="/index.php?action=register">S'inscrire</a>
             <a href="/index.php?action=login">Se connecter</a>
+            <a href="/index.php?action=mention">Mentions légales</a>
         <?php endif; ?>
     </nav>
 </header>
