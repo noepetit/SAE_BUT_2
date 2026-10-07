@@ -16,6 +16,39 @@ class HomeView
             Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
         </p>
     </section>
+
+    <!-- Section Nos Services -->
+    <section class="services-section">
+        <h2>Nos Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="/Assets/img/image1.webp" alt="Illustration Service 1" class="service-img" loading="lazy">
+                <h3>Service Placeholder 1</h3>
+                <p>Description complète du service et de son intégration dans l'architecture CyberCigales. Conçu pour démontrer la structure multi-colonnes.</p>
+            </div>
+            <div class="service-card">
+                <img src="/Assets/img/image2.webp" alt="Illustration Service 2" class="service-img" loading="lazy">
+                <h3>Service Placeholder 2</h3>
+                <p>Description complète du service et de son intégration dans l'architecture CyberCigales. Conçu pour démontrer la structure multi-colonnes.</p>
+            </div>
+            <div class="service-card">
+                <img src="/Assets/img/image3.webp" alt="Illustration Service 3" class="service-img" loading="lazy">
+                <h3>Service Placeholder 3</h3>
+                <p>Description complète du service et de son intégration dans l'architecture CyberCigales. Conçu pour démontrer la structure multi-colonnes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>À Propos de CyberCigales</h2>
+            <p>CyberCigales représente une vision pragmatique de l'affichage web. Cette section démontre l'équilibre entre contenus descriptifs textuels et visuels sur de grands écrans, en conservant un alignement strict sur une grille invisible de 1280px.</p>
+        </div>
+        <div class="about-media">
+            <img src="/Assets/img/favicon.png" alt="Logo CyberCigales" class="about-img" loading="lazy">
+        </div>
+    </section>
         <?php
         (new Layout('Accueil - CyberCigales', ob_get_clean()))->show();
     }

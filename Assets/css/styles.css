@@ -49,9 +49,14 @@ header {
     position: relative;
 }
 
-header h1 {
+header h1,
+header .site-title {
     margin: 0;
     font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    border-bottom: none;
 }
 
 .nav-menu {
@@ -161,25 +166,109 @@ form input:focus {
     border-color: var(--black);
 }
 
-form button {
-    padding: 0.85rem;
+form button,
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
     background: var(--black);
     color: var(--white);
     border: none;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
     transition: opacity 0.2s ease;
 }
 
-form button:hover {
+form button:hover,
+.btn:hover {
     opacity: 0.8;
+    border-bottom-color: transparent;
+}
+.register-form {
+    max-width: 380px;
+    margin: 2rem auto 0;
+    gap: 0.35rem;
+}
+
+.register-form label {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.register-form input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.register-form button {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
 }
 
 /* Page d'erreur */
 main section.error {
     text-align: center;
     padding-top: 4rem;
+}
+
+/* Sections Accueil (Nos Services & À Propos) */
+.services-section,
+.about-section {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.15rem;
+}
+
+.service-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.about-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 4px;
 }
 
 /*  Scroll to top */
@@ -229,7 +318,8 @@ main section.error {
         flex-wrap: wrap;
     }
 
-    header h1 {
+    header h1,
+    header .site-title {
         font-size: 1.2rem;
     }
 
@@ -306,5 +396,11 @@ main section.error {
     form input,
     form button {
         font-size: 1rem;
+    }
+
+    .services-grid,
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
