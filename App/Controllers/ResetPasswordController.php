@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers\ResetPassword;
+namespace App\Controllers;
 
 use Assets\Includes\Database;
 use App\Models\PasswordResetRepository;

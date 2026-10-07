@@ -1,12 +1,12 @@
 <?php
-namespace App\Controllers\Inscription;
+namespace App\Controllers;
 use Assets\Includes\Database;
 use App\Models\UserRepository;
-use App\Views\InscriptionView;
+use App\Views\RegisterView;
 use Assets\Includes\Exceptions\ControllerException;
 use PDOException;
 
-class InscriptionController
+class RegisterController
 {
     public function execute(): void
     {
@@ -15,7 +15,7 @@ class InscriptionController
         $old = [];
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            (new RegisterView($errors, $old, $_SESSION['csrf_token']))->show();
             return;
         }
         $token = $_POST["csrf_token"] ?? '';
@@ -50,12 +50,12 @@ class InscriptionController
             $errors['password'] = 'Le mot de passe est trop court';
         }
         if (!empty($errors)) {
-            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            (new RegisterView($errors, $old, $_SESSION['csrf_token']))->show();
             return;
         }
-        if ($userRepository->emailOrUsernameExist($email, $username)) {
+        if ($userRepository->emailOrUsernameExists($email, $username)) {
             $errors['global'] ='Email ou username existant';
-            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            (new RegisterView($errors, $old, $_SESSION['csrf_token']))->show();
             return;
         }
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -68,7 +68,7 @@ class InscriptionController
                 error_log($e->getMessage());
                 $errors['global'] = 'une erreur est survenue';
             }
-            (new InscriptionView($errors, $old, $_SESSION['csrf_token']))->show();
+            (new RegisterView($errors, $old, $_SESSION['csrf_token']))->show();
             return;
         }
         unset($_SESSION['csrf_token']);

@@ -5,35 +5,35 @@ session_start();
 try {
     if (filter_input(INPUT_GET, 'action')) {
         if ($_GET['action'] === 'register') {
-            (new \App\Controllers\Inscription\InscriptionController())->execute();
+            (new \App\Controllers\RegisterController())->execute();
             exit;
         }
         if ($_GET['action'] === 'login') {
-            (new \App\Controllers\Login\LoginController())->execute();      // mettre bon chemin quand finit
+            (new \App\Controllers\LoginController())->execute();
             exit;
         }
 
-        if ($_GET['action'] === 'profil') {
-            (new \App\Controllers\Profil\ProfilController())->execute();
+        if ($_GET['action'] === 'profil' || $_GET['action'] === 'profile') {
+            (new \App\Controllers\ProfileController())->execute();
             exit;
         }
 
         if ($_GET['action'] === 'logout') {
-            (new \App\Controllers\Logout\LogoutController())->execute();    // mettre bon chemin quand finit
+            (new \App\Controllers\LogoutController())->execute();
             exit;
         }
         if ($_GET['action'] === 'forgotPassword') {
-            (new \App\Controllers\ForgotPassword\ForgotPasswordController())->execute();
+            (new \App\Controllers\ForgotPasswordController())->execute();
             exit;
         }
         if ($_GET['action'] === 'resetPassword') {
-            (new \App\Controllers\ResetPassword\ResetPasswordController())->execute();
+            (new \App\Controllers\ResetPasswordController())->execute();
             exit;
         }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
-    (new \App\Controllers\Home\HomeController())->execute();
+    (new \App\Controllers\HomeController())->execute();
 } catch (ControllerException $e) {
     (new \App\Views\Error($e->getMessage()))->show();
 } catch (\RuntimeException $e) {
