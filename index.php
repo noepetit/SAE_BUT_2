@@ -1,6 +1,16 @@
 <?php
 use Assets\Includes\Exceptions\ControllerException;
 require __DIR__ . '/Assets/Includes/autoloader.php';
+
+session_set_cookie_params(
+    [
+        'path' => '/',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]
+);
+
 session_start();
 try {
     if (filter_input(INPUT_GET, 'action')) {
