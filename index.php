@@ -31,7 +31,7 @@ try {
             exit;
         }
         if ($_GET['action'] === 'mention') {
-            (new \App\Controllers\Inscription\InscriptionController())->execute();
+            (new \App\Views\mentionsLegales())->execute();
             exit;
         }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
