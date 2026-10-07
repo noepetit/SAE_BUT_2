@@ -24,9 +24,9 @@ public function show(): void
 </head>
 <body id="top">
 <header>
-    <h1><?= htmlspecialchars($this->title); ?></h1>
+    <a href="index.php" class="site-title">CyberCigales</a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Menu de navigation">
-    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir le menu">
+    <label for="menu-toggle" class="burger-btn">
         <span></span>
         <span></span>
         <span></span>
@@ -51,6 +51,17 @@ public function show(): void
     <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
     <a href="/index.php?action=mention">Mentions légales</a>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                alt="CSS Valide !" />
+        </a>
+    </p>
+
+    <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
+        <span class="arrow"></span>
+    </a>
 </footer>
 <script src="/Assets/Scripts/konami.js"></script>
 </body>
