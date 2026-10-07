@@ -39,12 +39,6 @@ public function show(): void
             <a href="index.php?action=logout">Se déconnecter</a>
         <?php else: ?>
             <!-- Pages dispo deconnecté -->
-            <a href="index.php?action=register">S'inscrire</a>
-            <a href="index.php?action=login">Se connecter</a>
-            <a href="/index.php?action=profil">Profil</a>
-            <a href="/index.php?action=logout">Se déconnecter</a>
-        <?php else: ?>
-            <!-- Pages dispo deconnecté -->
             <a href="/index.php?action=register">S'inscrire</a>
             <a href="/index.php?action=login">Se connecter</a>
         <?php endif; ?>
@@ -54,6 +48,7 @@ public function show(): void
     <?= $this->content; ?>
 </main>
 <footer>
+    <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
     <a href="/index.php?action=mention">Mentions légales</a>
 </footer>
