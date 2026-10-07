@@ -24,9 +24,9 @@ public function show(): void
 </head>
 <body id="top">
 <header>
-    <h1><?= htmlspecialchars($this->title); ?></h1>
+    <a href="index.php" class="site-title">CyberCigales</a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Menu de navigation">
-    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir le menu">
+    <label for="menu-toggle" class="burger-btn">
         <span></span>
         <span></span>
         <span></span>
