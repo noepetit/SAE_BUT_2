@@ -34,6 +34,10 @@ try {
             (new \App\Controllers\SitemapController())->execute();
             exit;
         }
+        if ($_GET['action'] === 'mention') {
+            (new \App\Controllers\Inscription\InscriptionController())->execute();
+            exit;
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
