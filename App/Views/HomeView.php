@@ -15,35 +15,37 @@ class HomeView
             Le jeu est un escape game sous forme de CTF (Capture The Flag) : le premier à trouver et prendre le drapeau de l'adversaire gagne.<br>
             Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
         </p>
+        <?php if (!isset($_SESSION['user_id'])): ?>
+            <a href="index.php?action=register" class="btn">S'inscrire</a>
+        <?php endif; ?>
     </section>
 
-    <!-- Section Nos Services -->
     <section class="services-section">
         <h2>Nos Services</h2>
         <div class="services-grid">
             <div class="service-card">
                 <img src="/Assets/img/image1.webp" alt="Illustration Service 1" class="service-img" loading="lazy">
-                <h3>Service Placeholder 1</h3>
-                <p>Description complète du service et de son intégration dans l'architecture CyberCigales. Conçu pour démontrer la structure multi-colonnes.</p>
+                <h3>Initiation à la Cybersécurité</h3>
+                <p>Apprenez les bases de la cybersécurité à travers nos jeux ludiques.</p>
             </div>
             <div class="service-card">
                 <img src="/Assets/img/image2.webp" alt="Illustration Service 2" class="service-img" loading="lazy">
-                <h3>Service Placeholder 2</h3>
-                <p>Description complète du service et de son intégration dans l'architecture CyberCigales. Conçu pour démontrer la structure multi-colonnes.</p>
+                <h3>Jeux de Cybersécurité</h3>
+                <p>Participez à nos jeux de cybersécurité pour mettre vos compétences à l'épreuve.</p>
             </div>
             <div class="service-card">
                 <img src="/Assets/img/image3.webp" alt="Illustration Service 3" class="service-img" loading="lazy">
-                <h3>Service Placeholder 3</h3>
-                <p>Description complète du service et de son intégration dans l'architecture CyberCigales. Conçu pour démontrer la structure multi-colonnes.</p>
+                <h3>Cohésion d'Équipe</h3>
+                <p>Renforcez la collaboration et la communication au sein de votre équipe à travers nos activités de cybersécurité.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section À Propos -->
+
     <section class="about-section">
         <div class="about-content">
             <h2>À Propos de CyberCigales</h2>
-            <p>CyberCigales représente une vision pragmatique de l'affichage web. Cette section démontre l'équilibre entre contenus descriptifs textuels et visuels sur de grands écrans, en conservant un alignement strict sur une grille invisible de 1280px.</p>
+            <p>CyberCigales est une plateforme dédiée à l'apprentissage de la cybersécurité à travers des jeux ludiques. Notre objectif est de rendre l'apprentissage de la cybersécurité accessible pour tous. Site conçu dans le cadre du projet développement web et de la SAE 2ème année.</p>
         </div>
         <div class="about-media">
             <img src="/Assets/img/favicon.png" alt="Logo CyberCigales" class="about-img" loading="lazy">
