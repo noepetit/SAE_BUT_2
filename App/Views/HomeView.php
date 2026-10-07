@@ -48,7 +48,7 @@ class HomeView
             <p>CyberCigales est une plateforme dédiée à l'apprentissage de la cybersécurité à travers des jeux ludiques. Notre objectif est de rendre l'apprentissage de la cybersécurité accessible pour tous. Site conçu dans le cadre du projet développement web et de la SAE 2ème année.</p>
         </div>
         <div class="about-media">
-            <img src="/Assets/img/favicon.png" alt="Logo CyberCigales" class="about-img" loading="lazy">
+            <img src="/Assets/img/favicon.jpg" alt="Logo CyberCigales" class="about-img" loading="lazy">
         </div>
     </section>
         <?php
