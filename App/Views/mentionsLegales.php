@@ -7,7 +7,7 @@ require __DIR__ . '/Layout.php';
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($pageTitle ?? 'CyberCigales') ?></title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/minify.css">
 </head>
 
 <h1>Mentions légales</h1>
