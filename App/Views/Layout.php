@@ -51,7 +51,7 @@ public function show(): void
     <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
     <a href="/index.php?action=mention">Mentions légales</a>
-    <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
+    <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;>
         <span class="arrow"></span>
     </a>
 </footer>
