@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'Mentions légales';
 $cardClass = 'card-wide';   // cadre plus large pour un texte long
-require __DIR__ . '/layout.php';
+require __DIR__ . '/Layout.php';
 ?>
 <head>
     <meta charset="UTF-8">
