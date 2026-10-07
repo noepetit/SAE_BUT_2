@@ -20,23 +20,23 @@ public function show(): void
     <meta name="description" content="Notre site présente une description d'un jeu ludique autour de la cybersécurité">
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="stylesheet" href="/Assets/css/styles.css">
-    <style>
-        body { font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
-        header { background: #333; color: #fff; padding: 1rem; }
-        nav a { color: #fff; margin-right: 15px; text-decoration: none; }
-        main { flex: 1; padding: 2rem; }
-        footer { background: #222; color: #aaa; text-align: center; padding: 1rem; }
-    </style>
+    <link rel="icon" type="image/png" href="/Assets/img/favicon.png">
 </head>
 <body id="top">
 <header>
     <h1><?= htmlspecialchars($this->title); ?></h1>
-    <nav>
-        <a href="/index.php">Accueil</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Menu de navigation">
+    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav class="nav-menu">
+        <a href="index.php">Accueil</a>
         <?php if (isset($_SESSION['user_id'])): ?>
             <!-- Page dispo connecté -->
-            <a href="/index.php?action=profil">Profil</a>
-            <a href="/index.php?action=logout">Se déconnecter</a>
+            <a href="index.php?action=profil">Profil</a>
+            <a href="index.php?action=logout">Se déconnecter</a>
         <?php else: ?>
             <!-- Pages dispo deconnecté -->
             <a href="/index.php?action=register">S'inscrire</a>
@@ -48,7 +48,9 @@ public function show(): void
     <?= $this->content; ?>
 </main>
 <footer>
+    <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
+    <a href="/index.php?action=mention">Mentions légales</a>
 </footer>
 <script src="/Assets/Scripts/konami.js"></script>
 </body>

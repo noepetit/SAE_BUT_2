@@ -4,16 +4,14 @@ namespace App\Views;
 
 class Error
 {
-    private $message;
-
-    public function __construct(string $message)
+    public function __construct(private string $message)
     {
-        $this->message = $message;
     }
 
     public function show(): void
     {
         http_response_code(404);
-        echo htmlspecialchars($this->message);
+        $content = '<section class="error"><h1>Erreur</h1><p>' . htmlspecialchars($this->message) . '</p></section>';
+        (new Layout('Erreur', $content))->show();
     }
 }

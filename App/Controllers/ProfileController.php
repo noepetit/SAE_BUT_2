@@ -1,16 +1,25 @@
 <?php
-namespace App\Controllers\Profil;
+namespace App\Controllers;
 
 use Assets\Includes\Database;
 use App\Models\UserRepository;
-use App\Views\ProfilView;
+use App\Views\ProfileView;
 
-class ProfilController
+class ProfileController
 {
     public function execute(): void
     {
+
         // Si on n'est pas connecté, redirection vers login
         if (!isset($_SESSION['user_id'])) {
+            header('Location: index.php?action=login');
+            exit();
+        }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
+            $userRepository = new UserRepository(Database::getInstance()->getConnection());
+            $userRepository->deleteUser($_SESSION['user_id']);
+            $_SESSION = [];
+            session_destroy();
             header('Location: index.php?action=login');
             exit();
         }
@@ -26,6 +35,6 @@ class ProfilController
         }
 
         //On affiche la vue en lui passant l'objet utilisateur
-        (new ProfilView($user))->show();
+        (new ProfileView($user))->show();
     }
 }

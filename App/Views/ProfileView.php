@@ -1,7 +1,7 @@
 <?php
 namespace App\Views;
 
-class ProfilView
+class ProfileView
 {
     // On injecte l'objet $user dans le constructeur
     public function __construct(private object $user) {}
@@ -19,6 +19,9 @@ class ProfilView
                 <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
             </div>
         </section>
+        <form method="post" action="index.php?action=profile" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible')">
+            <button type="submit" name="delete_user" class="btn-danger">Supprimer mon compte.</button>
+        </form>
         <?php
         (new Layout('Mon Profil - CyberCigales', ob_get_clean()))->show();
     }

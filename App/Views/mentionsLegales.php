@@ -1,8 +1,9 @@
 <?php
 $pageTitle = 'Mentions légales';
 $cardClass = 'card-wide';   // cadre plus large pour un texte long
-require __DIR__ . '/header_footer.php';
+require __DIR__ . '/Layout.php';
 ?>
+<form action="index.php?action=login" method="POST">
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($pageTitle ?? 'CyberCigales') ?></title>

@@ -27,8 +27,7 @@ class UserRepository
         return $statement->fetchObject() ?: null;
     }
     // Vérification si l'email ou l'username est deja utilisé
-    // (la bd à déjà UNIQUE sur email  et username, ixi on cherche à controler la réponses)
-    public function emailOrUsernameExist(string $email, string $username): bool
+    public function emailOrUsernameExists(string $email, string $username): bool
     {
         $statement = $this->connection->prepare('SELECT COUNT(*) FROM Users WHERE email = ? OR username = ?');
         $statement->execute([$email, $username]);
@@ -41,5 +40,11 @@ class UserRepository
     {
         $statement = $this->connection->prepare('UPDATE Users SET pwd_hash = ? WHERE id = ?');
         $statement->execute([$newPwdHash, $id]);
+    }
+
+    public function deleteUser(int $id): void
+    {
+        $statement = $this->connection->prepare('DELETE FROM Users WHERE id = ?');
+        $statement->execute([$id]);
     }
 }

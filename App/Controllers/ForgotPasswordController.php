@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers\ForgotPassword;
+namespace App\Controllers;
 
 use Assets\Includes\Database;
 use App\Models\UserRepository;
@@ -36,7 +36,7 @@ class ForgotPasswordController
                         $connection = Database::getInstance()->getConnection();
                         $userRepository = new UserRepository($connection);
                         $resetRepository = new PasswordResetRepository($connection);
-                        $config = require __DIR__ . '/../../../Assets/Includes/password_reset_config.php';
+                        $config = require __DIR__ . '/../../Assets/Includes/password_reset_config.php';
                         $user = $userRepository->findByEmail($email);
 
                         if ($user !== null) {

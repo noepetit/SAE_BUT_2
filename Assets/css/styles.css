@@ -1,0 +1,309 @@
+:root {
+    --black: #111;
+    --white: #fff;
+    --gray-light: #f4f4f4;
+    --gray-mid: #ccc;
+    --gray-dark: #555;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+a:hover {
+    border-bottom-color: var(--black);
+}
+
+/*  Header */
+header {
+    background: var(--black);
+    color: var(--white);
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--white);
+    margin-left: 1.5rem;
+    border-bottom: 2px solid transparent;
+    padding: 0.25rem 0;
+    transition: border-color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    border-bottom-color: var(--white);
+}
+
+/* Bouton burger (masqué sur grand écran) */
+.menu-toggle {
+    display: none;
+}
+
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.burger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/*  Main  */
+main {
+    flex: 1;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+main section h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+main section h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--gray-dark);
+    margin-top: 0;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: var(--black);
+    color: var(--gray-mid);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: var(--gray-mid);
+    text-decoration: underline;
+}
+
+/* Login*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-mid);
+    background: var(--white);
+    color: var(--black);
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--black);
+}
+
+form button {
+    padding: 0.85rem;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+/* Page d'erreur */
+main section.error {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+/*  Scroll to top */
+.scrollTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+}
+
+.scrollTop .arrow {
+    border: solid var(--black);
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(-135deg);
+}
+
+.btn-danger{
+    background: #7B0000;
+    color :white;
+    border : none;
+    border-radius: 2px;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.btn-danger :hover{
+    background: #b00020;
+    color :white;
+    border : none;
+    border-radius: 2px;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Media Mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.25rem;
+        flex-wrap: wrap;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    /* Affichage du bouton burger sur smartphone */
+    .burger-btn {
+        display: flex;
+    }
+
+    /* Animation du burger en croix 'X' lors du clic */
+    .menu-toggle:checked + .burger-btn span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .burger-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .burger-btn span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    /* Menu déroulant sur mobile */
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--black);
+        padding: 0.75rem 0 0.25rem 0;
+        margin-top: 1rem;
+        border-top: 1px solid #2a2a2a;
+    }
+
+    /* Déroulement du menu au clic */
+    .menu-toggle:checked ~ .nav-menu {
+        display: flex;
+        animation: menuFadeIn 0.25s ease-out forwards;
+    }
+
+    @keyframes menuFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-menu a {
+        margin: 0;
+        padding: 0.85rem 0.5rem;
+        font-size: 1.05rem;
+        border-bottom: 1px solid #222;
+        display: block;
+        transition: background-color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+        background: #1f1f1f;
+        padding-left: 1rem;
+        border-bottom-color: #222;
+    }
+
+    main {
+        padding: 2rem 1.25rem;
+    }
+
+    form {
+        margin-top: 1.5rem;
+    }
+
+    form input,
+    form button {
+        font-size: 1rem;
+    }
+}
