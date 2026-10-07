@@ -30,6 +30,10 @@ try {
             (new \App\Controllers\ResetPassword\ResetPasswordController())->execute();
             exit;
         }
+        if ($_GET['action'] === 'register') {
+            (new \App\Controllers\Inscription\InscriptionController())->execute();
+            exit;
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
