@@ -35,7 +35,7 @@ try {
             exit;
         }
         if ($_GET['action'] === 'mention') {
-            require_once __DIR__ . '/APP/Views/mentionsLegales.php';
+            require_once __DIR__ . '/App/Views/mentionsLegales.php';
             exit;
         }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
