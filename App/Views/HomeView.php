@@ -15,7 +15,9 @@ class HomeView
             Le jeu est un escape game sous forme de CTF (Capture The Flag) : le premier à trouver et prendre le drapeau de l'adversaire gagne.<br>
             Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
         </p>
-        <a href="index.php?action=register" class="btn">S'inscrire</a>
+        <?php if (!isset($_SESSION['user_id'])): ?>
+            <a href="index.php?action=register" class="btn">S'inscrire</a>
+        <?php endif; ?>
     </section>
 
     <!-- Section Nos Services -->
