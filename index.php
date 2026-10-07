@@ -30,7 +30,7 @@ try {
             (new \App\Controllers\ResetPassword\ResetPasswordController())->execute();
             exit;
         }
-        if ($_GET['action'] === 'register') {
+        if ($_GET['action'] === 'mention') {
             (new \App\Controllers\Inscription\InscriptionController())->execute();
             exit;
         }
