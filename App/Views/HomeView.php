@@ -51,10 +51,6 @@ class HomeView
             <img src="/Assets/img/favicon.png" alt="Logo CyberCigales" class="about-img" loading="lazy">
         </div>
     </section>
-
-    <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
-        <span class="arrow"></span>
-    </a>
         <?php
         (new Layout('Accueil - CyberCigales', ob_get_clean()))->show();
     }
