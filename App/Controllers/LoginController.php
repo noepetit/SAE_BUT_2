@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers\Login;
+namespace App\Controllers;
 use Assets\Includes\Database;
 use App\Models\UserRepository;
 use App\Views\LoginView;

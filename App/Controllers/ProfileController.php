@@ -1,11 +1,11 @@
 <?php
-namespace App\Controllers\Profil;
+namespace App\Controllers;
 
 use Assets\Includes\Database;
 use App\Models\UserRepository;
-use App\Views\ProfilView;
+use App\Views\ProfileView;
 
-class ProfilController
+class ProfileController
 {
     public function execute(): void
     {
@@ -26,6 +26,6 @@ class ProfilController
         }
 
         //On affiche la vue en lui passant l'objet utilisateur
-        (new ProfilView($user))->show();
+        (new ProfileView($user))->show();
     }
 }

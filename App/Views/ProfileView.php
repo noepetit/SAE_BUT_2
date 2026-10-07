@@ -1,7 +1,7 @@
 <?php
 namespace App\Views;
 
-class ProfilView
+class ProfileView
 {
     // On injecte l'objet $user dans le constructeur
     public function __construct(private object $user) {}
