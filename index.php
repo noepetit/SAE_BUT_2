@@ -30,6 +30,10 @@ try {
             (new \App\Controllers\ResetPasswordController())->execute();
             exit;
         }
+        if ($_GET['action'] === 'sitemap') {
+            (new \App\Controllers\SitemapController())->execute();
+            exit;
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
 
