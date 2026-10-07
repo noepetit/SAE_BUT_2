@@ -32,7 +32,7 @@ require __DIR__ . '/Layout.php';
 
     <h2>Conception et réalisation</h2>
     <p>
-        Site conçu et développé par Keokham Rayan, Petit Noé, Reguig Abdelrahmane, Serra Thomas,  Tastet Timéo en PHP, HTML, CSS
+        Site conçu et développé par Keokham Rayan, Petit Noé, Reguig Abdelrahmane , Serra Thomas,  Tastet Timéo en PHP, HTML, CSS
         et SQL, selon une architecture MVC (Modèle – Vue – Contrôleur).
     </p>
 
