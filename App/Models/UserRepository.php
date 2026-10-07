@@ -41,4 +41,10 @@ class UserRepository
         $statement = $this->connection->prepare('UPDATE Users SET pwd_hash = ? WHERE id = ?');
         $statement->execute([$newPwdHash, $id]);
     }
+
+    public function deleteUser(int $id): void
+    {
+        $statement = $this->connection->prepare('DELETE FROM Users WHERE id = ?');
+        $statement->execute([$id]);
+    }
 }
