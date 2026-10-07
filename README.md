@@ -10,13 +10,6 @@ Faire les modifs en local :
 * ```gh pr create```
 * ```gh pr merge --rebase --delete-branch```              
 
-## À faire :
-- Supprimer la branche sur depot local (phpstorm) mvc/controllers
-- entrer les commandes
-```bash
-git fetch origin
-git switch -c mvc/controllers origin/mvc/controllers
-```
 nom fichier : "REGUIG Abdelrahmane – KEOKHAM Raya – PETIT Noé – TASTET Timéo.zip"
 
 ---
