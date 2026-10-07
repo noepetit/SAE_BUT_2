@@ -15,9 +15,6 @@ class HomeView
             Le jeu est un escape game sous forme de CTF (Capture The Flag) : le premier à trouver et prendre le drapeau de l'adversaire gagne.<br>
             Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
         </p>
-        <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
-            <span class="arrow"></span>
-        </a>
     </section>
         <?php
         (new Layout('Accueil - CyberCigales', ob_get_clean()))->show();
