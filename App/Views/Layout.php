@@ -51,6 +51,14 @@ public function show(): void
     <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
     <a href="/index.php?action=mention">Mentions légales</a>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                alt="CSS Valide !" />
+        </a>
+    </p>
+
     <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
         <span class="arrow"></span>
     </a>
