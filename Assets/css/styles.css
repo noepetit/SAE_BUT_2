@@ -208,15 +208,17 @@ main section.error {
     background: #7B0000;
     color :white;
     border : none;
-    padding: 3rem;
-    margin-top: 10px;
+    border-radius: 2px;
+    padding: 1rem;
+    margin-top: 2rem;
 }
 .btn-danger :hover{
     background: #b00020;
     color :white;
     border : none;
-    padding: 3rem;
-    margin-top: 10px;
+    border-radius: 2px;
+    padding: 1rem;
+    margin-top: 2rem;
 }
 
 /* Media Mobile */
