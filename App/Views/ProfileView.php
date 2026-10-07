@@ -19,7 +19,7 @@ class ProfileView
                 <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
             </div>
         </section>
-        <form method="post" action="index.php?action=profil" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible')">
+        <form method="post" action="index.php?action=profile" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible')">
             <button type="submit" name="delete_user" class="btn-danger">Supprimer mon compte.</button>
         </form>
         <?php
