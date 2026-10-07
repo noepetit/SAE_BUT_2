@@ -11,7 +11,7 @@ require __DIR__ . '/Layout.php';
 </head>
 
 <h1>Mentions légales</h1>
-<p class="subtitle">Dernière mise à jour : [JJ/MM/AAAA]</p>
+<p class="subtitle">Dernière mise à jour : 07/10/2026</p>
 
 <section class="legal">
 
