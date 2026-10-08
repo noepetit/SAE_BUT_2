@@ -19,7 +19,7 @@ public function show(): void
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Notre site présente une description d'un jeu ludique autour de la cybersécurité">
     <title><?= htmlspecialchars($this->title); ?></title>
-    <link rel="stylesheet" href="/Assets/css/styles.css">
+    <link rel="stylesheet" href="/Assets/css/minify.css">
     <link rel="icon" type="image/png" href="/Assets/img/favicon.png">
 </head>
 <body id="top">
@@ -63,7 +63,7 @@ public function show(): void
         <span class="arrow"></span>
     </a>
 </footer>
-<script src="/Assets/Scripts/konami.js"></script>
+<script src="/Assets/Scripts/minify.js"></script>
 </body>
 </html>
 <?php

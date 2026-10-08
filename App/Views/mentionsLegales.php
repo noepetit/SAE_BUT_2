@@ -1,17 +1,11 @@
 <?php
-$pageTitle = 'Mentions légales';
-$cardClass = 'card-wide';   // cadre plus large pour un texte long
-require __DIR__ . '/Layout.php';
-?>
-<form action="index.php?action=login" method="POST">
-<head>
-    <meta charset="UTF-8">
-    <title><?= htmlspecialchars($pageTitle ?? 'CyberCigales') ?></title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
 
+use App\Views\Layout;
+
+ob_start();
+?>
 <h1>Mentions légales</h1>
-<p class="subtitle">Dernière mise à jour : [JJ/MM/AAAA]</p>
+<p class="subtitle">Dernière mise à jour : 07/10/2026</p>
 
 <section class="legal">
 
@@ -19,8 +13,8 @@ require __DIR__ . '/Layout.php';
     <p>
         Ce site est réalisé dans le cadre d'un projet pédagogique de deuxième année
         de BUT Informatique à l'IUT Aix Marseille.<br>
-        Responsables de la publication : Keokham Rayan, Petit Noé, Reguig Abdelrahmane, Serra Thomas,  Tastet Timéo.<br>
-        Contact : <a href="mailto:[adresse@mail.fr]">cybercigales@gmail.com</a>
+        Responsables de la publication : Keokham Rayan, Petit Noé, Reguig Abdelrahmane, Serra Thomas, Tastet Timéo.<br>
+        Contact : <a href="mailto:cybercigales@gmail.com">cybercigales@gmail.com</a>
     </p>
 
     <h2>Statut du site</h2>
@@ -32,7 +26,7 @@ require __DIR__ . '/Layout.php';
 
     <h2>Conception et réalisation</h2>
     <p>
-        Site conçu et développé par Keokham Rayan, Petit Noé, Reguig Abdelrahmane , Serra Thomas,  Tastet Timéo en PHP, HTML, CSS
+        Site conçu et développé par Keokham Rayan, Petit Noé, Reguig Abdelrahmane, Serra Thomas, Tastet Timéo en PHP, HTML, CSS
         et SQL, selon une architecture MVC (Modèle – Vue – Contrôleur).
     </p>
 
@@ -40,7 +34,7 @@ require __DIR__ . '/Layout.php';
     <p>
         AlwaysData<br>
         91 rue du Faubourg Saint-Honoré, 75008 Paris<br>
-        Site web :https://www.alwaysdata.com
+        Site web : https://www.alwaysdata.com
     </p>
 
     <h2>Contenu et responsabilité</h2>
@@ -85,7 +79,7 @@ require __DIR__ . '/Layout.php';
         « Informatique et Libertés » du 6 janvier 1978, vous disposez d'un droit
         d'accès, de rectification, d'effacement et d'opposition concernant vos
         données. Pour l'exercer, contactez-nous à
-        <a href="mailto:[adresse@mail.fr]">cybercigales@gmail.com</a>.
+        <a href="mailto:cybercigales@gmail.com">cybercigales@gmail.com</a>.
         En cas de désaccord, vous pouvez saisir la
         <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.
     </p>
@@ -104,6 +98,7 @@ require __DIR__ . '/Layout.php';
 
 </section>
 
-<p class="back"><a href="index.php?action=login">← Retour à la connexion</a></p>
+<p class="back"><a href="index.php">← Retour à l'accueil</a></p>
 
-<?php require __DIR__ . '/layout_footer.php'; ?>
+<?php
+(new Layout('Mentions légales - CyberCigales', ob_get_clean()))->show();
