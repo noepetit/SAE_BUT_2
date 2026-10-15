@@ -11,7 +11,7 @@ class ProfileView
         ob_start();
         ?>
         <section>
-            <h2>Mon Profil</h2>
+            <h1><strong>Mon Profil</strong></h1>
             <?php if ($this->error != null) : ?>
                 <p class="err"><?= htmlspecialchars($this->error)?></p>
             <?php endif; ?>
@@ -24,13 +24,14 @@ class ProfileView
                 <p><strong>Email :</strong> <?= htmlspecialchars($this->user->email) ?></p>
                 <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
             </div>
-            <p><strong>Modification Pseudo :</strong></p>
-            <form method="post" action="index.php?action=profile">
-                <!--<label for="username"><strong>Pseudo</strong></label>-->
-                <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>
-                <button type="submit" name="update_username">Enregistrer</button>
-            </form>
-
+            <h2><strong>Modification Profile :</strong></h2>
+            <div class="profil-card">
+                <form method="post" action="index.php?action=profile">
+                    <label for="username"><strong>Pseudo :</strong></label>
+                    <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>
+                    <button type="submit" name="update_username">Enregistrer</button>
+                </form>
+            </div>
         </section>
         <form method="post" action="index.php?action=profile" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible')">
             <button type="submit" name="delete_user" class="btn-danger">Supprimer mon compte.</button>
