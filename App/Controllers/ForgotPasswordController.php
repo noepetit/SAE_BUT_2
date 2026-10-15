@@ -44,8 +44,18 @@ class ForgotPasswordController
                             $tokenHash = hash('sha256', $token);
 
                             $resetRepository->createResetToken($user->id, $tokenHash);
-                            $link = rtrim($config['site_url'], '/') . '/index.php?action=resetPassword&token=' . $token;
-                            $body = "Bonjour,\n\nPour choisir un nouveau mot de passe :\n" . $link . "\n\nCe lien expire dans 30 minutes.\n";
+                            $resetPage = rtrim($config['site_url'], '/');
+                            $link = $resetPage . '&token=' . $token;
+                            $body = "Bonjour,\n\n"
+                                . "Pour choisir un nouveau mot de passe, cliquez sur ce lien :\n"
+                                . $link . "\n\n"
+                                . "Votre code de réinitialisation :\n"
+                                . $token . "\n\n"
+                                . "Le code sera automatiquement rempli sur la page.\n"
+                                . "Sinon, copiez-collez le code dans le champ prévu.\n\n"
+                                . "Si le lien ne fonctionne pas, ouvrez cette page :\n"
+                                . $resetPage . "\n\n"
+                                . "Ce code expire dans 30 minutes. Ne le partagez pas.\n";
                             $headers = [
                                 'From' => $config['mail_from'],
                                 'Content-Type' => 'text/plain; charset=UTF-8'
