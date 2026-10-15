@@ -34,9 +34,9 @@ class ProfileController
                 $error = 'Le nom d\'utilisateur ne peut pas être vide';
             } else {
                 $exist = $userRepository->findByUsername($newUsername);
-                if ($exist !== null && $exist->id !== $_SESSION['user_id']) {$error = 'Nom d\'utilisateur déjâ existant';}
+                if ($exist !== null && $exist->id != $_SESSION['user_id']) {$error = 'Nom d\'utilisateur déjâ existant';}
                 else{
-                    $userRepository->updateUsername($_SESSION['user_id'], $_POST['username']);
+                    $userRepository->updateUsername($_SESSION['user_id'], $newUsername);
                     $success = 'Pseudo mis à jour.';
                 }
             }
