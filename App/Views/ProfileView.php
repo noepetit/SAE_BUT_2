@@ -23,7 +23,7 @@ class ProfileView
                 <p><strong>Nom :</strong> <?= htmlspecialchars($this->user->last_name) ?></p>
                 <p><strong>Email :</strong> <?= htmlspecialchars($this->user->email) ?></p>
                 <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
-            </div>
+            </div class="profil-update">
             <p><strong>Modification Pseudo :</strong></p>
             <form method="post" action="index.php?action=profile">
                 <!--<label for="username"><strong>Pseudo</strong></label>-->
