@@ -24,7 +24,7 @@ class ProfileView
                 <p><strong>Email :</strong> <?= htmlspecialchars($this->user->email) ?></p>
                 <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
             </div>
-            <form>
+            <form method="post" action="index.php?action=profile">
                 <label for="username"><strong>Pseudo</strong></label>
                 <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>
                 <button type="submit" name="update_username">Enregistrer</button>
