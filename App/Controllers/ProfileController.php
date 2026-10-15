@@ -26,9 +26,9 @@ class ProfileController
             exit();
         }
 
+        $error = null;
+        $success = null;
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_username'])){
-            $error = null;
-            $success = null;
             $newUsername = trim($_POST['username'] ?? '');
             if ($newUsername === ''){
                 $error = 'Le nom d\'utilisateur ne peut pas être vide';

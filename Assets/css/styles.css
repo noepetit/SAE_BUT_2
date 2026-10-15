@@ -58,6 +58,19 @@ header .site-title {
     letter-spacing: -0.02em;
     border-bottom: none;
 }
+.profil-card {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.err {
+    color : red;
+}
+.suc {
+    color : green;
+}
 
 .nav-menu {
     display: flex;
