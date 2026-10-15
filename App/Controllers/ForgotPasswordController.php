@@ -44,7 +44,9 @@ class ForgotPasswordController
                             $tokenHash = hash('sha256', $token);
 
                             $resetRepository->createResetToken($user->id, $tokenHash);
-                            $resetPage = rtrim($config['site_url'], '/');
+                            $resetPage = rtrim($config['site_url'], '/')
+                                . '/index.php?action=resetPassword';
+
                             $link = $resetPage . '&token=' . $token;
                             $body = "Bonjour,\n\n"
                                 . "Pour choisir un nouveau mot de passe, cliquez sur ce lien :\n"
