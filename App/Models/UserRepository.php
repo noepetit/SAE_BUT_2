@@ -19,6 +19,14 @@ class UserRepository
         return $statement->fetchObject() ?: null;
     }
 
+    // Fonction pour retrouver un utilisateur selon son Username.
+    public function findByUsername(string $username): ?object
+    {
+        $statement = $this->connection->prepare('SELECT id, email, username, first_name, last_name, pwd_hash FROM Users WHERE username = ?');
+        $statement->execute([$username]);
+        return $statement->fetchObject() ?: null;
+    }
+
     // Fonction pour retrouver un utilisateur selon son ID
     public function findById(int $id): ?object
     {
@@ -40,6 +48,15 @@ class UserRepository
     {
         $statement = $this->connection->prepare('UPDATE Users SET pwd_hash = ? WHERE id = ?');
         $statement->execute([$newPwdHash, $id]);
+    }
+
+    public function updateUsername(int $id, string $newUsername): void
+    {
+        $res = $this->findByUsername($newUsername);
+        if ($res === null || $res->id == $id) {
+            $statement = $this->connection->prepare('UPDATE Users SET username = ? WHERE id = ?');
+            $statement->execute([$newUsername, $id]);
+        }
     }
 
     public function deleteUser(int $id): void
