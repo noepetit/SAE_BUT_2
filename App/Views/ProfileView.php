@@ -23,13 +23,15 @@ class ProfileView
                 <p><strong>Nom :</strong> <?= htmlspecialchars($this->user->last_name) ?></p>
                 <p><strong>Email :</strong> <?= htmlspecialchars($this->user->email) ?></p>
                 <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
-            </div class="profil-update">
-            <p><strong>Modification Profile :</strong></p>
-            <form method="post" action="index.php?action=profile">
-                <label for="username"><strong>Pseudo :</strong></label>
-                <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>
-                <button type="submit" name="update_username">Enregistrer</button>
-            </form>
+            </div>
+            <div class="profil-update">
+                <p><strong>Modification Profile :</strong></p>
+                <form method="post" action="index.php?action=profile">
+                    <label for="username"><strong>Pseudo :</strong></label>
+                    <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>
+                    <button type="submit" name="update_username">Enregistrer</button>
+                </form>
+            </div>
 
         </section>
         <form method="post" action="index.php?action=profile" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible')">
