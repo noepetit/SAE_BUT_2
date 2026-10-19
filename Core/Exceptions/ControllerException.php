@@ -1,6 +1,6 @@
 <?php
 
-namespace Assets\Includes\Exceptions;
+namespace Core\Exceptions;
 class ControllerException extends \Exception
 {
 }

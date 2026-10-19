@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use Assets\Includes\Database;
+use Core\Database;
 use App\Models\PasswordResetRepository;
 use App\Models\UserRepository;
 use App\Views\ResetPasswordView;

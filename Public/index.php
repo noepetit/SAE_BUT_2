@@ -1,6 +1,6 @@
 <?php
-use Assets\Includes\Exceptions\ControllerException;
-require __DIR__ . '/Assets/Includes/autoloader.php';
+use Core\Exceptions\ControllerException;
+require __DIR__ . '/Assets/Core/autoloader.php';
 
 session_set_cookie_params(
     [
