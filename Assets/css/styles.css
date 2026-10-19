@@ -70,9 +70,6 @@ header .site-title {
     border-radius: 8px;
 }
 
-.err {
-    color : red;
-}
 .suc {
     color : green;
 }
