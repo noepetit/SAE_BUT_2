@@ -1,6 +1,7 @@
 <?php
-use Core\Exceptions\ControllerException;
-require __DIR__ . '/../Core/autoloader.php';
+use \Core\Exceptions\ControllerException;
+
+require __DIR__ . '/../src/Core/autoloader.php';
 
 session_set_cookie_params(
     [
@@ -12,11 +13,11 @@ session_set_cookie_params(
 );
 
 $routes=[];
-foreach (glob(__DIR__ . '/App/Controllers/*Controller.php') as $file){
+foreach (glob(__DIR__ . 'App/Controllers/*Controller.php') as $file){
     $className = basename($file, '.php');
     $name = str_replace('Controller', '', $className);
     $route = lcfirst($name);
-    $routes[$route] = '\App\Controllers\\' . $className;
+    $routes[$route] = 'App\\Controllers\\' . $className;
 }
 session_start();
 try {
@@ -29,7 +30,7 @@ try {
     (new $routes[$action]())->execute();
 }
 catch (ControllerException $e) {
-    (new \App\Views\Error($e->getMessage()))->show();
+    (new App\Views\Error($e->getMessage()))->show();
 } catch (\RuntimeException $e) {
-    (new \App\Views\Error('Erreur de connexion à la base de données'))->show();
+    (new App\Views\Error('Erreur de connexion à la base de données'))->show();
 }
