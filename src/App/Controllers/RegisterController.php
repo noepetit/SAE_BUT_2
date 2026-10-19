@@ -1,10 +1,10 @@
 <?php
 namespace App\Controllers;
-use Core\Database;
-use App\Models\UserRepository;
-use App\Views\RegisterView;
-use Core\Exceptions\ControllerException;
 use PDOException;
+use \App\Models\UserRepository;
+use \App\Views\RegisterView;
+use \Core\Database;
+use \Core\Exceptions\ControllerException;
 
 class RegisterController
 {

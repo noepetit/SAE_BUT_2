@@ -1,9 +1,9 @@
 <?php
 namespace App\Controllers;
 
-use Core\Database;
-use App\Models\UserRepository;
-use App\Views\ProfileView;
+use \App\Models\UserRepository;
+use \App\Views\ProfileView;
+use \Core\Database;
 
 class ProfileController
 {

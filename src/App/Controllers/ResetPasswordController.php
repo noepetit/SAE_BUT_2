@@ -1,10 +1,10 @@
 <?php
-namespace App\Controllers;
+namespace  \App\Controllers;
 
-use Core\Database;
-use App\Models\PasswordResetRepository;
-use App\Models\UserRepository;
-use App\Views\ResetPasswordView;
+use \App\Models\PasswordResetRepository;
+use \App\Models\UserRepository;
+use \App\Views\ResetPasswordView;
+use \Core\Database;
 
 class ResetPasswordController
 {

@@ -1,9 +1,9 @@
 <?php
 namespace App\Controllers;
-use Core\Database;
-use App\Models\UserRepository;
-use App\Views\LoginView;
-use Core\Exceptions\ControllerException;
+use \App\Models\UserRepository;
+use \App\Views\LoginView;
+use \Core\Database;
+use \Core\Exceptions\ControllerException;
 
 class LoginController
 {

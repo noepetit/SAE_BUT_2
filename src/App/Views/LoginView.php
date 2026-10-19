@@ -1,5 +1,6 @@
 <?php
 namespace App\Views;
+
 class LoginView
 {
     public function __construct(private array $errors, private array $old, private string $csrfToken){}
