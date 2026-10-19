@@ -1,9 +1,9 @@
 :root {
-    --black: #111;
+    --blue: #00AEFF;
     --white: #fff;
     --gray-light: #f4f4f4;
     --gray-mid: #ccc;
-    --gray-dark: #555;
+    --purple: #BF00FF;
 }
 
 * {
@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: var(--white);
-    color: var(--black);
+    color: var(--blue);
     line-height: 1.6;
 }
 
@@ -28,19 +28,19 @@ h1, h2, h3 {
 }
 
 a {
-    color: var(--black);
+    color: var(--blue);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s ease;
 }
 
 a:hover {
-    border-bottom-color: var(--black);
+    border-bottom-color: var(--blue);
 }
 
 /*  Header */
 header {
-    background: var(--black);
+    background: var(--blue);
     color: var(--white);
     padding: 1.25rem 2rem;
     display: flex;
@@ -137,13 +137,13 @@ main section h1 {
 main section h2 {
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--gray-dark);
+    color: var(--purple);
     margin-top: 0;
 }
 
 /* ===== Footer ===== */
 footer {
-    background: var(--black);
+    background: var(--blue);
     color: var(--gray-mid);
     text-align: center;
     padding: 1.5rem;
@@ -175,20 +175,20 @@ form input {
     padding: 0.75rem;
     border: 1px solid var(--gray-mid);
     background: var(--white);
-    color: var(--black);
+    color: var(--blue);
     font-size: 1rem;
 }
 
 form input:focus {
     outline: none;
-    border-color: var(--black);
+    border-color: var(--blue);
 }
 
 form button,
 .btn {
     display: inline-block;
     padding: 0.85rem 1.75rem;
-    background: var(--black);
+    background: var(--blue);
     color: var(--white);
     border: none;
     font-size: 1rem;
@@ -266,7 +266,7 @@ main section.error {
 .service-card p {
     margin: 0;
     font-size: 0.95rem;
-    color: var(--gray-dark);
+    color: var(--purple);
 }
 
 .about-section {
@@ -296,7 +296,7 @@ main section.error {
     right: 2rem;
     width: 3rem;
     height: 3rem;
-    border: 1px solid var(--black);
+    border: 1px solid var(--blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -306,7 +306,7 @@ main section.error {
 }
 
 .scrollTop .arrow {
-    border: solid var(--black);
+    border: solid var(--blue);
     border-width: 0 2px 2px 0;
     padding: 4px;
     transform: rotate(-135deg);
@@ -365,7 +365,7 @@ main section.error {
         width: 100%;
         flex-direction: column;
         align-items: stretch;
-        background: var(--black);
+        background: var(--blue);
         padding: 0.75rem 0 0.25rem 0;
         margin-top: 1rem;
         border-top: 1px solid #2a2a2a;
