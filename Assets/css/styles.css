@@ -69,6 +69,7 @@ header .site-title {
     background: #f4f4f4;
     padding: 2rem;
     border-radius: 8px;
+    margin-top: 1rem;
 }
 
 .err {

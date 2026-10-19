@@ -24,8 +24,8 @@ class ProfileView
                 <p><strong>Email :</strong> <?= htmlspecialchars($this->user->email) ?></p>
                 <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
             </div>
+            <p><strong>Modification Profile :</strong></p>
             <div class="profil-update">
-                <p><strong>Modification Profile :</strong></p>
                 <form method="post" action="index.php?action=profile">
                     <label for="username"><strong>Pseudo :</strong></label>
                     <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>
