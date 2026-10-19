@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Views\SitemapView;
+use \App\Views\SitemapView;
 
 class SitemapController
 {

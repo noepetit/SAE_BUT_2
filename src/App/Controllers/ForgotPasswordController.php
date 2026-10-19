@@ -1,10 +1,10 @@
 <?php
 namespace App\Controllers;
 
-use Core\Database;
-use App\Models\UserRepository;
-use App\Models\PasswordResetRepository;
-use App\Views\ForgotPasswordView;
+use \App\Models\PasswordResetRepository;
+use \App\Models\UserRepository;
+use \App\Views\ForgotPasswordView;
+use \Core\Database;
 
 class ForgotPasswordController
 {

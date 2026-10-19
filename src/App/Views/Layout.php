@@ -19,8 +19,8 @@ public function show(): void
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Notre site présente une description d'un jeu ludique autour de la cybersécurité">
     <title><?= htmlspecialchars($this->title); ?></title>
-    <link rel="stylesheet" href="/Public/Assets/css/styles.css">
-    <link rel="icon" type="image/png" href="/Public/Assets/Images/favicon.png">
+    <link rel="stylesheet" href="/Assets/css/styles.css">
+    <link rel="icon" type="image/png" href="/Assets/Images/favicon.png">
 </head>
 <body id="top">
 <header>
@@ -39,8 +39,8 @@ public function show(): void
             <a href="index.php?action=logout">Se déconnecter</a>
         <?php else: ?>
             <!-- Pages dispo deconnecté -->
-            <a href="/Public/index.php?action=register">S'inscrire</a>
-            <a href="/Public/index.php?action=login">Se connecter</a>
+            <a href="/index.php?action=register">S'inscrire</a>
+            <a href="/index.php?action=login">Se connecter</a>
         <?php endif; ?>
     </nav>
 </header>
@@ -50,11 +50,11 @@ public function show(): void
 <footer>
     <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
-    <a href="/Public/index.php?action=mention">Mentions légales</a>
+    <a href="/index.php?action=mention">Mentions légales</a>
     <p>
         <a href="https://jigsaw.w3.org/css-validator/check/referer">
             <img style="border:0;width:88px;height:31px"
-                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                ="https://jigsaw.w3.org/css-validator/images/vcss-blue"
                 alt="CSS Valide !" />
         </a>
     </p>
@@ -63,7 +63,7 @@ public function show(): void
         <span class="arrow"></span>
     </a>
 </footer>
-<script src="/Public/Assets/Scripts/minify.js"></script>
+<script ="/Assets/Scripts/minify.js"></script>
 </body>
 </html>
 <?php
