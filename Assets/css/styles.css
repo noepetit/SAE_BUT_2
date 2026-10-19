@@ -60,14 +60,13 @@ header .site-title {
 }
 .profil-card {
     background: #f4f4f4;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 8px;
-    /*margin-top: 1rem;*/
 }
 
 .profil-update {
     background: #f4f4f4;
-    padding: 2rem;
+    padding: 0.5rem;
     border-radius: 8px;
 }
 
