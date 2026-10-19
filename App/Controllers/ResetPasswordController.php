@@ -20,9 +20,9 @@ class ResetPasswordController
         $isPost = $_SERVER['REQUEST_METHOD'] === 'POST';
 
         if ($isPost) {
-            $token = filter_input(INPUT_POST, 'token') ?: '';
+            $token = trim(filter_input(INPUT_POST, 'token') ?: '');
         } else {
-            $token = filter_input(INPUT_GET, 'token') ?: '';
+            $token = trim(filter_input(INPUT_GET, 'token') ?: '');
         }
 
         $connection = Database::getInstance()->getConnection();
@@ -40,7 +40,9 @@ class ResetPasswordController
             $request = $resetRepository->findValidByToken($tokenHash);
 
             if ($request === null) {
-                $errors['global'] = 'Ce lien est invalide ou expiré.';
+                if ($isPost || $token !== '') {
+                    $errors['global'] = 'Ce code est invalide ou expiré.';
+                }
             } elseif ($isPost) {
                 $csrfToken = filter_input(INPUT_POST, 'csrf_token') ?: '';
                 $password = filter_input(INPUT_POST, 'password') ?: '';

@@ -15,8 +15,10 @@ class ProfileController
             header('Location: index.php?action=login');
             exit();
         }
+        // Connection à la base de donnée.
+        $userRepository = new UserRepository(Database::getInstance()->getConnection());
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
-            $userRepository = new UserRepository(Database::getInstance()->getConnection());
             $userRepository->deleteUser($_SESSION['user_id']);
             $_SESSION = [];
             session_destroy();
@@ -24,8 +26,24 @@ class ProfileController
             exit();
         }
 
+        $error = null;
+        $success = null;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_username'])){
+            $newUsername = trim($_POST['username'] ?? '');
+            if ($newUsername === ''){
+                $error = 'Le nom d\'utilisateur ne peut pas être vide';
+            } else {
+                $exist = $userRepository->findByUsername($newUsername);
+                if ($exist !== null && $exist->id != $_SESSION['user_id']) {$error = 'Nom d\'utilisateur déjâ existant';}
+                else{
+                    $userRepository->updateUsername($_SESSION['user_id'], $newUsername);
+                    $success = 'Pseudo mis à jour.';
+                }
+            }
+
+        }
+
         // On récupère les infos de l'utilisateur en BDD
-        $userRepository = new UserRepository(Database::getInstance()->getConnection());
         $user = $userRepository->findById($_SESSION['user_id']);
 
         // Sécurité supplémentaire : si l'utilisateur a été supprimé
@@ -35,6 +53,6 @@ class ProfileController
         }
 
         //On affiche la vue en lui passant l'objet utilisateur
-        (new ProfileView($user))->show();
+        (new ProfileView($user, $error, $success))->show();
     }
 }
