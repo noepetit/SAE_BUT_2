@@ -11,7 +11,7 @@ class ProfileView
         ob_start();
         ?>
         <section>
-            <h2>Mon Profil</h2>
+            <h1><strong>Mon Profil</strong></h1>
             <?php if ($this->error != null) : ?>
                 <p class="err"><?= htmlspecialchars($this->error)?></p>
             <?php endif; ?>
