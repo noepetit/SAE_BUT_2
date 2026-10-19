@@ -13,7 +13,7 @@ session_set_cookie_params(
 );
 
 $routes=[];
-foreach (glob(__DIR__ . 'App/Controllers/*Controller.php') as $file){
+foreach (glob(__DIR__ . '/../src/App/Controllers/*Controller.php') as $file){
     $className = basename($file, '.php');
     $name = str_replace('Controller', '', $className);
     $route = lcfirst($name);
