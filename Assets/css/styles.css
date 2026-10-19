@@ -1,9 +1,9 @@
 :root {
-    --blue: #00AEFF;
+    --black: #00AEFF;
     --white: #fff;
     --gray-light: #f4f4f4;
     --gray-mid: #ccc;
-    --purple: #BF00FF;
+    --gray-dark: #555;
 }
 
 * {
@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: var(--white);
-    color: var(--blue);
+    color: var(--black);
     line-height: 1.6;
 }
 
@@ -28,19 +28,19 @@ h1, h2, h3 {
 }
 
 a {
-    color: var(--blue);
+    color: var(--black);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s ease;
 }
 
 a:hover {
-    border-bottom-color: var(--blue);
+    border-bottom-color: var(--black);
 }
 
 /*  Header */
 header {
-    background: var(--blue);
+    background: var(--black);
     color: var(--white);
     padding: 1.25rem 2rem;
     display: flex;
@@ -70,6 +70,9 @@ header .site-title {
     border-radius: 8px;
 }
 
+.err {
+    color : red;
+}
 .suc {
     color : green;
 }
@@ -134,13 +137,13 @@ main section h1 {
 main section h2 {
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--purple);
+    color: var(--gray-dark);
     margin-top: 0;
 }
 
 /* ===== Footer ===== */
 footer {
-    background: var(--blue);
+    background: var(--black);
     color: var(--gray-mid);
     text-align: center;
     padding: 1.5rem;
@@ -172,20 +175,20 @@ form input {
     padding: 0.75rem;
     border: 1px solid var(--gray-mid);
     background: var(--white);
-    color: var(--blue);
+    color: var(--black);
     font-size: 1rem;
 }
 
 form input:focus {
     outline: none;
-    border-color: var(--blue);
+    border-color: var(--black);
 }
 
 form button,
 .btn {
     display: inline-block;
     padding: 0.85rem 1.75rem;
-    background: var(--blue);
+    background: var(--black);
     color: var(--white);
     border: none;
     font-size: 1rem;
@@ -263,7 +266,7 @@ main section.error {
 .service-card p {
     margin: 0;
     font-size: 0.95rem;
-    color: var(--purple);
+    color: var(--gray-dark);
 }
 
 .about-section {
@@ -293,7 +296,7 @@ main section.error {
     right: 2rem;
     width: 3rem;
     height: 3rem;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--black);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -303,7 +306,7 @@ main section.error {
 }
 
 .scrollTop .arrow {
-    border: solid var(--blue);
+    border: solid var(--black);
     border-width: 0 2px 2px 0;
     padding: 4px;
     transform: rotate(-135deg);
@@ -362,7 +365,7 @@ main section.error {
         width: 100%;
         flex-direction: column;
         align-items: stretch;
-        background: var(--blue);
+        background: var(--black);
         padding: 0.75rem 0 0.25rem 0;
         margin-top: 1rem;
         border-top: 1px solid #2a2a2a;
