@@ -21,12 +21,13 @@ public function show(): void
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="stylesheet" href="/Assets/css/styles.css">
     <link rel="icon" type="image/png" href="/Assets/Images/favicon.png">
+    <script src="/Assets/Scripts/scroll-to-top.js"></script>
 </head>
 <body id="top">
 <header>
     <a href="index.php" class="site-title">CyberCigales</a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Menu de navigation">
-    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir Menue">
+    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -59,8 +60,8 @@ public function show(): void
         </a>
     </p>
 
-    <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
-        <span class="arrow"></span>
+    <a href="#top" id="scrollToTop" class="scrollTop" aria-label="Remonter en haut de la page">
+        <span class="arrow" aria-label="true"></span>
     </a>
 </footer>
 <script src="/Assets/Scripts/minify.js"></script>
