@@ -8,7 +8,7 @@ class RegisterView
     {
         ob_start();?>
 
-<form method="POST" action="index.php?action=register">
+<form class="register-form" method="POST" action="index.php?action=register">
     <input type="hidden" name="csrf_token" value="<?=htmlspecialchars($this->csrfToken); ?>">
     <?php if (isset($this->errors['global'])) :?>
         <p><?= htmlspecialchars($this->errors['global']) ?></p>
@@ -58,7 +58,6 @@ class RegisterView
     <?php if (isset($this->errors['password'])) : ?>
         <p><?= htmlspecialchars($this->errors['password']) ?></p>
     <?php endif; ?>
-    <br>
     <input type="submit" value="M'inscrire">
 </form>
 <script src="/Assets/Scripts/password-strengh.js" defer></script>
