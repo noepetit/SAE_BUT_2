@@ -21,7 +21,7 @@ public function show(): void
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="stylesheet" href="/Assets/css/styles.css">
     <link rel="icon" type="image/png" href="/Assets/Images/favicon.png">
-    <script src="/Assets/Scripts/scroll-to-top.js"></script>
+    <script src="/Assets/Scripts/scroll-to-top.js" defer></script>
 </head>
 <body id="top">
 <header>
@@ -61,7 +61,7 @@ public function show(): void
     </p>
 
     <a href="#top" id="scrollToTop" class="scrollTop" aria-label="Remonter en haut de la page">
-        <span class="arrow" aria-label="true"></span>
+        <span class="arrow" aria-hidden="true"></span>
     </a>
 </footer>
 <script src="/Assets/Scripts/minify.js"></script>
