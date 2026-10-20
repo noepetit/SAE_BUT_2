@@ -46,12 +46,14 @@ class RegisterController
         if (filter_var($email, FILTER_VALIDATE_EMAIL) === false || mb_strlen($email) > 255) {
             $errors['email'] = 'L\'email est invalide';
         }
-        if (mb_strlen($password) < 9) {
-            $errors['password'] = 'Le mot de passe doit contenir au moins 9 caractères.';
+        if (mb_strlen($password) < 8) {
+            $errors['password'] = 'Le mot de passe doit contenir au moins 8 caractères.';
         } elseif (!preg_match('/[A-Z]/', $password)) {
             $errors['password'] = 'Ajoutez au moins une majuscule.';
+        } elseif (!preg_match('/[a-z]/', $password)) {
+            $errors['password'] = 'Ajoutez au moins une minuscule.';
         } elseif (!preg_match('/[!@#$%&*?]/', $password)) {
-            $errors['password'] = 'Ajoutez un caractère spécial parmi';
+            $errors['password'] = 'Ajoutez un caractère spécial parmi \{ !@#$%&*?\}';
         } elseif (strlen($password) > 72 || str_contains($password, "\0")) {
             $errors['password'] = 'Le mot de passe est trop long ou contient un caractère invalide.';
         }

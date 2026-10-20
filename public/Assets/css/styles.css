@@ -205,13 +205,13 @@ form button:hover,
     border-bottom-color: transparent;
 }
 .register-form {
-    max-width: 380px;
+    /*max-width: 380px;*/
     margin: 2rem auto 0;
     gap: 0.35rem;
 }
 
 .register-form label {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-bottom: 0.2rem;
 }
 
@@ -313,6 +313,21 @@ main section.error {
     transform: rotate(-135deg);
 }
 
+.scrollTop {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scrollTop.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
 .btn-danger{
     background: #7B0000;
     color :white;
@@ -329,6 +344,37 @@ main section.error {
     padding: 1rem;
     margin-top: 2rem;
 }
+
+.password-meter {
+    width: 100%;
+    max-width: 350px;
+    height: 8px;
+    margin-top: 10px;
+    background-color: #e5e7eb;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#password-bar {
+    width: 0;
+    height: 100%;
+    background-color: #b91c1c;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#password-rules {
+    padding-left: 20px;
+}
+
+#password-rules li {
+    margin-bottom: 5px;
+}
+
+#password-rules .rule-valid {
+    color: #15803d;
+    font-weight: bold;
+}
+
 
 /* Media Mobile */
 @media (max-width: 768px) {

@@ -21,12 +21,13 @@ public function show(): void
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="stylesheet" href="/Assets/css/styles.css">
     <link rel="icon" type="image/png" href="/Assets/Images/favicon.png">
+    <script src="/Assets/Scripts/scroll-to-top.js" defer></script>
 </head>
 <body id="top">
 <header>
     <a href="index.php" class="site-title">CyberCigales</a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Menu de navigation">
-    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir Menue">
+    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -50,20 +51,20 @@ public function show(): void
 <footer>
     <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
-    <a href="/index.php?action=mention">Mentions légales</a>
+    <a href="/index.php?action=legalMentions">Mentions légales</a>
     <p>
         <a href="https://jigsaw.w3.org/css-validator/check/referer">
             <img style="border:0;width:88px;height:31px"
-                ="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
                 alt="CSS Valide !" />
         </a>
     </p>
 
-    <a href="#top" class="scrollTop" aria-label="Remonter en haut de la page">
-        <span class="arrow"></span>
+    <a href="#top" id="scrollToTop" class="scrollTop" aria-label="Remonter en haut de la page">
+        <span class="arrow" aria-hidden="true"></span>
     </a>
 </footer>
-<script ="/Assets/Scripts/minify.js"></script>
+<script src="/Assets/Scripts/minify.js"></script>
 </body>
 </html>
 <?php
