@@ -50,11 +50,11 @@ public function show(): void
 <footer>
     <p><a href="index.php?action=sitemap">Plan du site</a></p>
     <p>&copy; <?= date('Y'); ?> - Tous droits réservés.</p>
-    <a href="/index.php?action=mention">Mentions légales</a>
+    <a href="/index.php?action=legalMentions">Mentions légales</a>
     <p>
         <a href="https://jigsaw.w3.org/css-validator/check/referer">
             <img style="border:0;width:88px;height:31px"
-                ="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
                 alt="CSS Valide !" />
         </a>
     </p>
@@ -63,7 +63,7 @@ public function show(): void
         <span class="arrow"></span>
     </a>
 </footer>
-<script ="/Assets/Scripts/minify.js"></script>
+<script src="/Assets/Scripts/minify.js"></script>
 </body>
 </html>
 <?php
