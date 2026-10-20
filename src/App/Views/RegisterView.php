@@ -80,7 +80,7 @@ class RegisterView
     <input type="submit" value="M'inscrire">
 </form>
 
-<script src="../../../public/Assets/Scripts/password-strengh.js" defer></script>
+<script src="/Assets/Scripts/password-strengh.js" defer></script>
 
 <?php
         (new Layout('Inscription', ob_get_clean()))->show();
