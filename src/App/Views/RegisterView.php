@@ -29,23 +29,17 @@ class RegisterView
         <p><?= htmlspecialchars($this->errors['first_name']) ?></p>
     <?php endif;?>
 
-    <br>
-
     <label for="username">Votre username</label>
     <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->old['username'] ?? '');?>" placeholder="Entrez votre username ..." minlength="3" required>
     <?php if (isset($this->errors['username'])) :?>
         <p><?= htmlspecialchars($this->errors['username']) ?></p>
     <?php endif;?>
 
-    <br>
-
     <label for="email">Votre email</label>
     <input type="email" id="email" name="email" value="<?= htmlspecialchars($this->old['email'] ?? '');?>" placeholder="Entrez votre email ..." required>
     <?php if (isset($this->errors['email'])) :?>
         <p><?= htmlspecialchars($this->errors['email']) ?></p>
     <?php endif;?>
-
-    <br>
 
     <label for="password">Votre password</label>
     <input
