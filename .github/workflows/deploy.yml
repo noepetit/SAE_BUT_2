@@ -17,7 +17,7 @@ jobs:
           chmod +x wsbuilder
 
       - name: Build website
-        run: ./wsbuilder --css-minify --js-minify ./
+        run: ./wsbuilder --build-force --css-minify --js-minify .
 
       - name: SFTP upload
         uses: Dylan700/sftp-upload-action@latest
@@ -28,7 +28,5 @@ jobs:
           port: 22
           uploads: |
             ./build => ./www/
-            ./App/ => ./www/App/
-            ./Assets/ => ./www/Assets/
           delete: 'true'
 # si changement de index.php dans un repertoire, changer ./build avec le nom du repertoir et revoir branch lier au site.

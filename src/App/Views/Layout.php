@@ -20,13 +20,13 @@ public function show(): void
     <meta name="description" content="Notre site présente une description d'un jeu ludique autour de la cybersécurité">
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="stylesheet" href="/Assets/css/styles.css">
-    <link rel="icon" type="image/png" href="/Assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="/Assets/Images/favicon.png">
 </head>
 <body id="top">
 <header>
     <a href="index.php" class="site-title">CyberCigales</a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Menu de navigation">
-    <label for="menu-toggle" class="burger-btn">
+    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir Menue">
         <span></span>
         <span></span>
         <span></span>
@@ -35,7 +35,7 @@ public function show(): void
         <a href="index.php">Accueil</a>
         <?php if (isset($_SESSION['user_id'])): ?>
             <!-- Page dispo connecté -->
-            <a href="index.php?action=profil">Profil</a>
+            <a href="index.php?action=profile">Profil</a>
             <a href="index.php?action=logout">Se déconnecter</a>
         <?php else: ?>
             <!-- Pages dispo deconnecté -->
@@ -54,7 +54,7 @@ public function show(): void
     <p>
         <a href="https://jigsaw.w3.org/css-validator/check/referer">
             <img style="border:0;width:88px;height:31px"
-                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                ="https://jigsaw.w3.org/css-validator/images/vcss-blue"
                 alt="CSS Valide !" />
         </a>
     </p>
@@ -63,7 +63,7 @@ public function show(): void
         <span class="arrow"></span>
     </a>
 </footer>
-<script src="/Assets/Scripts/minify.js"></script>
+<script ="/Assets/Scripts/minify.js"></script>
 </body>
 </html>
 <?php

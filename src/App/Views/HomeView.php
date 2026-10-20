@@ -24,17 +24,17 @@ class HomeView
         <h2>Nos Services</h2>
         <div class="services-grid">
             <div class="service-card">
-                <img src="/Assets/img/image1.webp" alt="Illustration Service 1" class="service-img" loading="lazy">
+                <img src="/Assets/Images/image1.webp" alt="Illustration Service 1" class="service-img" loading="lazy">
                 <h3>Initiation à la Cybersécurité</h3>
                 <p>Apprenez les bases de la cybersécurité à travers nos jeux ludiques.</p>
             </div>
             <div class="service-card">
-                <img src="/Assets/img/image2.webp" alt="Illustration Service 2" class="service-img" loading="lazy">
+                <img src="Assets/Images/image2.webp" alt="Illustration Service 2" class="service-img" loading="lazy">
                 <h3>Jeux de Cybersécurité</h3>
                 <p>Participez à nos jeux de cybersécurité pour mettre vos compétences à l'épreuve.</p>
             </div>
             <div class="service-card">
-                <img src="/Assets/img/image3.webp" alt="Illustration Service 3" class="service-img" loading="lazy">
+                <img src="/Assets/Images/image3.webp" alt="Illustration Service 3" class="service-img" loading="lazy">
                 <h3>Cohésion d'Équipe</h3>
                 <p>Renforcez la collaboration et la communication au sein de votre équipe à travers nos activités de cybersécurité.</p>
             </div>
@@ -48,7 +48,7 @@ class HomeView
             <p>CyberCigales est une plateforme dédiée à l'apprentissage de la cybersécurité à travers des jeux ludiques. Notre objectif est de rendre l'apprentissage de la cybersécurité accessible pour tous. Site conçu dans le cadre du projet développement web et de la SAE 2ème année.</p>
         </div>
         <div class="about-media">
-            <img src="/Assets/img/favicon.jpg" alt="Logo CyberCigales" class="about-img" loading="lazy">
+            <img src="/Assets/Images/favicon.png" alt="Logo CyberCigales" class="about-img" loading="lazy">
         </div>
     </section>
         <?php
