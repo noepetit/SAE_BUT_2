@@ -313,6 +313,21 @@ main section.error {
     transform: rotate(-135deg);
 }
 
+.scrollTop {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scrollTop.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
 .btn-danger{
     background: #7B0000;
     color :white;
