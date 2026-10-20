@@ -1,7 +1,7 @@
 const scrollBtn = document.getElementById("scrollToTop");
 
 function updateScrollButton() {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 200) {
         scrollBtn.classList.add("show");
     } else {
         scrollBtn.classList.remove("show");
