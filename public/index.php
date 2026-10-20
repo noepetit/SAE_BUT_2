@@ -26,11 +26,18 @@ try {
     if (!array_key_exists($action, $routes)) {
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
+    $controllerClass = $routes[$action];
 
-    (new $routes[$action]())->execute();
+    $controllerInstance = new $controllerClass();
+
+    if (!method_exists($controllerInstance, 'execute')) {
+        throw new ControllerException('Erreur interne : la méthode d\'action est introuvable.');
+    }
+
+    $controllerInstance->execute();
 }
 catch (ControllerException $e) {
-    (new App\Views\Error($e->getMessage()))->show();
+    (new App\Views\Error($e->getMessage(), 404))->show();
 } catch (\RuntimeException $e) {
-    (new App\Views\Error('Erreur de connexion à la base de données'))->show();
+    (new App\Views\Error('Erreur de connexion à la base de données', 500))->show();
 }
