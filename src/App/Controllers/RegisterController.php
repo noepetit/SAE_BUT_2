@@ -50,8 +50,10 @@ class RegisterController
             $errors['password'] = 'Le mot de passe doit contenir au moins 9 caractères.';
         } elseif (!preg_match('/[A-Z]/', $password)) {
             $errors['password'] = 'Ajoutez au moins une majuscule.';
+        } elseif (!preg_match('/[a-z]/', $password)) {
+            $errors['password'] = 'Ajoutez au moins une minuscule.';
         } elseif (!preg_match('/[!@#$%&*?]/', $password)) {
-            $errors['password'] = 'Ajoutez un caractère spécial parmi';
+            $errors['password'] = 'Ajoutez un caractère spécial parmi \{ !@#$%&*?\}';
         } elseif (strlen($password) > 72 || str_contains($password, "\0")) {
             $errors['password'] = 'Le mot de passe est trop long ou contient un caractère invalide.';
         }
