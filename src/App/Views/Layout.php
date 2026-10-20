@@ -35,7 +35,7 @@ public function show(): void
         <a href="index.php">Accueil</a>
         <?php if (isset($_SESSION['user_id'])): ?>
             <!-- Page dispo connecté -->
-            <a href="index.php?action=profil">Profil</a>
+            <a href="index.php?action=profile">Profil</a>
             <a href="index.php?action=logout">Se déconnecter</a>
         <?php else: ?>
             <!-- Pages dispo deconnecté -->
