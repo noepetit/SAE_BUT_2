@@ -48,13 +48,39 @@ class RegisterView
     <br />
 
     <label for="password">Votre password</label>
-    <input type="password" id="password" name="password" placeholder="Entrez votre password ..." minlength="8" required>
-    <?php if (isset($this->errors['password'])) :?>
+    <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Entrez votre password ..."
+            minlength="9"
+            maxlength="72"
+            autocomplete="new-password"
+            aria-describedby="password-rules password-status"
+            required>
+
+    <div class="password-meter" aria-hidden="true">
+        <div id="password-bar"></div>
+    </div>
+
+    <p id="password-status" aria-live="polite">
+        Saisissez un mot de passe.
+    </p>
+
+    <ul id="password-rules">
+        <li id="rule-length">Au moins 9 caractères</li>
+        <li id="rule-uppercase">Une majuscule de A à Z</li>
+        <li id="rule-special">Un caractère parmi ! @ # $ % &amp; * ?</li>
+    </ul>
+
+    <?php if (isset($this->errors['password'])) : ?>
         <p><?= htmlspecialchars($this->errors['password']) ?></p>
-    <?php endif;?>
+    <?php endif; ?>
     <br />
     <input type="submit" value="M'inscrire">
 </form>
+
+<script src="../../../public/Assets/Scripts/password-strengh.js" defer></script>
 
 <?php
         (new Layout('Inscription', ob_get_clean()))->show();
