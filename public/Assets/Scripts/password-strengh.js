@@ -9,7 +9,7 @@ const specialRule = document.getElementById("rule-special");
 function updatePasswordStrength() {
     const password = passwordInput.value;
 
-    const hasLength = Array.from(password).length >= 9;
+    const hasLength = Array.from(password).length >= 8;
     const hasUppercase = /[A-Z]/.test(password);
     const hasSpecial = /[!@#$%&*?]/.test(password);
 
@@ -51,7 +51,7 @@ function updatePasswordStrength() {
 
     if (score < 3) {
         passwordInput.setCustomValidity(
-            "Utilisez au moins 9 caractères, une majuscule et un symbole parmi ! @ # $ % & * ?"
+            "Utilisez au moins 8 caractères, une majuscule et un symbole parmi ! @ # $ % & * ?"
         );
     } else {
         passwordInput.setCustomValidity("");

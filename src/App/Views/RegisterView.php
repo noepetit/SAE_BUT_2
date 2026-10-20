@@ -53,7 +53,7 @@ class RegisterView
             id="password"
             name="password"
             placeholder="Entrez votre password ..."
-            minlength="9"
+            minlength="8"
             maxlength="72"
             autocomplete="new-password"
             aria-describedby="password-rules password-status"
@@ -68,7 +68,7 @@ class RegisterView
     </p>
 
     <ul id="password-rules">
-        <li id="rule-length">Au moins 9 caractères</li>
+        <li id="rule-length">Au moins 8 caractères</li>
         <li id="rule-uppercase">Une majuscule de A à Z</li>
         <li id="rule-special">Un caractère parmi ! @ # $ % &amp; * ?</li>
     </ul>
