@@ -330,6 +330,37 @@ main section.error {
     margin-top: 2rem;
 }
 
+.password-meter {
+    width: 100%;
+    max-width: 350px;
+    height: 8px;
+    margin-top: 10px;
+    background-color: #e5e7eb;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#password-bar {
+    width: 0;
+    height: 100%;
+    background-color: #b91c1c;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#password-rules {
+    padding-left: 20px;
+}
+
+#password-rules li {
+    margin-bottom: 5px;
+}
+
+#password-rules .rule-valid {
+    color: #15803d;
+    font-weight: bold;
+}
+
+
 /* Media Mobile */
 @media (max-width: 768px) {
     header {
