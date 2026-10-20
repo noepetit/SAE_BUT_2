@@ -21,7 +21,7 @@ class RegisterView
     <p><?= htmlspecialchars($this->errors['last_name']) ?></p>
     <?php endif;?>
 
-    <br />
+    <br>
 
     <label for="first_name">Votre prénom</label>
     <input type="text" id="first_name" name="first_name" value="<?= htmlspecialchars($this->old['first_name'] ?? '');?>" placeholder="Entrez votre prénom ..." required>
@@ -29,7 +29,7 @@ class RegisterView
         <p><?= htmlspecialchars($this->errors['first_name']) ?></p>
     <?php endif;?>
 
-    <br />
+    <br>
 
     <label for="username">Votre username</label>
     <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->old['username'] ?? '');?>" placeholder="Entrez votre username ..." minlength="3" required>
@@ -37,7 +37,7 @@ class RegisterView
         <p><?= htmlspecialchars($this->errors['username']) ?></p>
     <?php endif;?>
 
-    <br />
+    <br>
 
     <label for="email">Votre email</label>
     <input type="email" id="email" name="email" value="<?= htmlspecialchars($this->old['email'] ?? '');?>" placeholder="Entrez votre email ..." required>
@@ -45,7 +45,7 @@ class RegisterView
         <p><?= htmlspecialchars($this->errors['email']) ?></p>
     <?php endif;?>
 
-    <br />
+    <br>
 
     <label for="password">Votre password</label>
     <input
@@ -76,7 +76,7 @@ class RegisterView
     <?php if (isset($this->errors['password'])) : ?>
         <p><?= htmlspecialchars($this->errors['password']) ?></p>
     <?php endif; ?>
-    <br />
+    <br>
     <input type="submit" value="M'inscrire">
 </form>
 
