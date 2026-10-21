@@ -61,7 +61,8 @@ Chacun avance sur les fonctionalités qui lui sont attribués et si l'un d'entre
 
 A chaque fin de spint nous feront une réunion avec notre client pour lui montrer concrètement les ajouts et améliorations apportés.
 Si le client valide alors nous le laissons tel quel sinon nous ajustons notre travail.
-Si à la fin d'un sprint certaines fonctionalités ne sont pas rélisés dans le temps impartit, ces fonctionalités sont reportés au sprint suivant et en tête de liste dans le Todo.Nous avons utilisé la méthode agile tout au long de ce projet.
+Si à la fin d'un sprint certaines fonctionalités ne sont pas rélisés dans le temps impartit, ces fonctionalités sont reportés au sprint suivant et en tête de liste dans le Todo.
+Nous avons utilisé la méthode agile tout au long de ce projet.
 La première chose a faire pour exercer cette méthode est de se 
 répartir les différents rôles nécéssaire a ce projet comme le 
 Scrum Master, le Product Owner et l'équipe technique.
@@ -78,6 +79,12 @@ Le Product Owner est aussi responsable de maximiser la valeur du produit.
 Le Product Owner est le seul à avoir un contact avec le client, au delà des
 responsablitées décrites au dessus le Product Owner(PO) fait le lien essentiel 
 entre la Scrum Team et le client.
+
+Apeès s'être répartit les rôles, une réunion avec le client est essentiel.
+Mais de la préparation est nécéssaire, il faut préparer les questions a lui poser, lui présenter ce que l'on a déjà fait on ce que l'on compte faire si l'on a une maquette ou autre.
+Pendant la réunion, prendre des notes est essentiels, généralement c'est le Po qui prends les notes.
+Un résumé de la réunion avec toute l'équipe permet de rajouter des éléments à la prise de note du PO tout en permettant de préparer le product bakclog et le sprint par la même occasion.
+
 
 Cette méthode nous a permis de nous organiser en créant d'abord 
 un projet qui a comme nom product backlog qui est entièrement 
@@ -125,3 +132,4 @@ Chacun avance sur les fonctionalités qui lui sont attribués et si l'un d'entre
 A chaque fin de spint nous feront une réunion avec notre client pour lui montrer concrètement les ajouts et améliorations apportés.
 Si le client valide alors nous le laissons tel quel sinon nous ajustons notre travail.
 Si à la fin d'un sprint certaines fonctionalités ne sont pas rélisés dans le temps impartit, ces fonctionalités sont reportés au sprint suivant et en tête de liste dans le Todo.
+
