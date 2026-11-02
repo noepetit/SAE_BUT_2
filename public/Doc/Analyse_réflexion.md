@@ -25,7 +25,7 @@ dans cette épreuve, nous allons découvrir le fonctionnement du code vigenaire,
 L'attaque kasiki et le code césar.
 Ici nous aurons besoin de deux équipes, une première équipe qui va vouloir transmettre un message codé à la deuxième équipe.
 Ce message codé le sera à l'aide du code vigenaire et l'équipe qui va vouloir le décoder va utiliser l'attaque de Kasiki et le code de César pour décoder ce message et obtenir le message envoyé par la première équipe avant le codage du message.
-Pour vérifier si le message est le bon, la deuxième équipe doit déchiffrer un message par substitution que le premier groupe aura codé grâce au code de substitution.
+Pour vérifier si le message est le bon, la deuxième équipe doit déchiffrer le message initial maintenant codé par la première équipe grâce au code césar.
 A la fin de l'épreuve, les deux équipes vont échanger leurs rôles.
 
 Cours =
