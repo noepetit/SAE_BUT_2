@@ -9,6 +9,7 @@ class HomeView
         ob_start();
         ?><section>
         <h1>CyberCigales</h1>
+        <br>
         <h2>Découvrez des jeux ludiques sur la cybersécurité</h2>
         <p>Découvrez l'univers de cybercigales à travers nos jeux ludiques.<br>
             L'expérience que nous proposons est une initiation à la cybersécurité à travers des jeux ludiques.<br>

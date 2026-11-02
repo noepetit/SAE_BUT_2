@@ -3,7 +3,7 @@ name: Deploy website
 on:
   push:
     branches:
-      - site/main
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
