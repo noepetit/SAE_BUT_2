@@ -26,22 +26,26 @@ public function show(): void
 <body id="top">
 <header>
     <a href="index.php" class="site-title">CyberCigales</a>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Menu de navigation">
     <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir Menu">
         <span></span>
         <span></span>
         <span></span>
     </label>
-    <nav class="nav-menu">
+    <div class="nav-menu">
         <a href="index.php">Accueil</a>
+        <a href="index.php?action=miniGames">Mini-Jeux</a>
+        <a href="index.php?action=OurServices">Nos Services</a>
+        <a href="index.php?action=about">À Propos</a>
+    </div>
+    <nav class="nav-menu">
         <?php if (isset($_SESSION['user_id'])): ?>
             <!-- Page dispo connecté -->
             <a href="index.php?action=profile">Profil</a>
             <a href="index.php?action=logout">Se déconnecter</a>
         <?php else: ?>
             <!-- Pages dispo deconnecté -->
-            <a href="/index.php?action=register">S'inscrire</a>
             <a href="/index.php?action=login">Se connecter</a>
+            <a href="/index.php?action=register" class="btn">S'inscrire</a>
         <?php endif; ?>
     </nav>
 </header>

@@ -1,254 +1,277 @@
+/* =====================================================
+   GLOBAL
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 :root {
-    --black: #111;
-    --white: #fff;
-    --gray-light: #f4f4f4;
-    --gray-mid: #ccc;
-    --gray-dark: #555;
-}
+    --bg: #040b1f;             /* Fond principal du site (bleu nuit très foncé), utilisé sur body, header, footer et champs de formulaire */
+    --bg-section: #061232;     /* Fond des grandes sections mises en avant (ex. bloc d'appel à l'action), un peu plus clair que --bg */
+    --bg-card: #0a1a44;        /* Fond des cartes et blocs (service-card, profil-card, scrollTop) */
+    --border: #1a2f6b;         /* Couleur des bordures : cartes, champs de formulaire, séparateurs de sections, header et footer */
+    --blue: #0048AD;           /* Bleu principal : fond des boutons, bordure au focus des champs */
+    --blue-hover: #4a95ff;     /* Bleu plus clair du bouton quand on le survole */
+    --cyan: #3cc8ff;           /* Couleur d'accent : survol des liens, soulignement du menu, flèche du scrollTop */
+    --text: #ffffff;           /* Couleur du texte principal et des titres */
+    --text-muted: #8fa4d4;     /* Texte secondaire : paragraphes, liens du menu, footer, placeholders */
+    --danger: #7b0000;         /* Rouge foncé du bouton de suppression (.btn-danger) */
+    --danger-hover: #b00020;   /* Rouge plus vif du bouton de suppression au survol */
+    --success: #2ecc71;        /* Vert des messages de succès (.suc) et des règles de mot de passe validées */
+    --error: #ff5c5c;          /* Rouge des messages d'erreur (.err) et de la barre de force du mot de passe */
+    --radius: 8px;             /* Arrondi des coins des cartes et blocs */
+    --container: 1200px;       /* Largeur maximale du contenu de la page (main) */
+    }
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: var(--white);
-    color: var(--black);
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
 }
 
+/* Titres communs à toutes les pages */
 h1, h2, h3 {
     font-weight: 600;
     letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+p {
+    margin: 0 0 1rem;
+    color: var(--text-muted);
 }
 
 a {
-    color: var(--black);
+    color: var(--text);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    border-bottom-color: var(--black);
+    color: var(--cyan);
 }
 
-/*  Header */
-header {
-    background: var(--black);
-    color: var(--white);
-    padding: 1.25rem 2rem;
-    display: flex;
-    justify-content: space-between;
+/* Boutons */
+form button,
+.btn {
+    display: inline-flex;
     align-items: center;
-    position: relative;
-}
-
-header h1,
-header .site-title {
-    margin: 0;
-    font-size: 1.4rem;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--blue);
+    color: var(--text);
+    border: 1px solid var(--blue);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: var(--white);
-    letter-spacing: -0.02em;
-    border-bottom: none;
-}
-.profil-card {
-    background: #f4f4f4;
-    padding: 2rem;
-    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
-.profil-update {
-    background: #f4f4f4;
-    padding: 2rem;
-    border-radius: 8px;
+form button:hover,
+.btn:hover {
+    background: var(--blue-hover);
+    color: var(--text);
+    box-shadow: 0 0 20px rgba(31, 123, 255, 0.45);
 }
 
+/* Messages d'erreur / succès */
 .err {
-    color : red;
+    color: var(--error);
 }
 
 .suc {
-    color : green;
+    color: var(--success);
+}
+
+
+/* =====================================================
+   HEADER & NAVIGATION (commun à toutes les pages)
+   ===================================================== */
+
+header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Logo */
+header h1,
+header .site-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--text);
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
+    gap: 1.75rem;
 }
 
 .nav-menu a {
-    color: var(--white);
-    margin-left: 1.5rem;
-    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+    color: var(--text-muted);
     padding: 0.25rem 0;
-    transition: border-color 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+.nav-menu a.btn {
+    /*margin-left: auto;          !* Pousse le bouton tout à droite du header *!*/
+    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    color: var(--text);
+    border: 1px solid var(--blue);
+    border-radius: 6px;
 }
 
 .nav-menu a:hover {
-    border-bottom-color: var(--white);
+    color: var(--text);
+    border-bottom-color: var(--cyan);
 }
 
-/* Bouton burger (masqué sur grand écran) */
-.menu-toggle {
-    display: none;
-}
-
+/* Burger : masqué (la maquette affiche les liens en ligne sur tous les écrans) */
+.menu-toggle,
 .burger-btn {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    padding: 0;
 }
 
-.burger-btn span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--white);
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
 
-/*  Main  */
+/* =====================================================
+   MAIN (commun à toutes les pages)
+   ===================================================== */
+
 main {
     flex: 1;
-    max-width: 720px;
     width: 100%;
+    max-width: var(--container);
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 3rem 2rem;
 }
 
-main section h1 {
-    font-size: 2rem;
-    margin-bottom: 0.25rem;
+main section {
+    margin-bottom: 4rem;
 }
 
-main section h2 {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--gray-dark);
-    margin-top: 0;
-}
 
-/* ===== Footer ===== */
+/* =====================================================
+   FOOTER (commun à toutes les pages)
+   ===================================================== */
+
 footer {
-    background: var(--black);
-    color: var(--gray-mid);
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
     text-align: center;
-    padding: 1.5rem;
-    font-size: 0.85rem;
+    padding: 2rem;
+    font-size: 0.8rem;
 }
 
 footer a {
-    color: var(--gray-mid);
+    color: var(--text-muted);
     text-decoration: underline;
 }
 
-/* Login*/
-form {
+footer a:hover {
+    color: var(--cyan);
+}
+
+
+/* =====================================================
+   BOUTON "RETOUR EN HAUT" (commun à toutes les pages)
+   ===================================================== */
+
+.scrollTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-form label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    display: block;
+.scrollTop .arrow {
+    border: solid var(--cyan);
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(-135deg);
 }
 
-form input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--gray-mid);
-    background: var(--white);
-    color: var(--black);
-    font-size: 1rem;
+.scrollTop.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
-form input:focus {
-    outline: none;
-    border-color: var(--black);
-}
 
-form button,
-.btn {
-    display: inline-block;
-    padding: 0.85rem 1.75rem;
-    background: var(--black);
-    color: var(--white);
-    border: none;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-}
+/* =====================================================
+   PAGE : ACCUEIL
+   ===================================================== */
 
-form button:hover,
-.btn:hover {
-    opacity: 0.8;
-    border-bottom-color: transparent;
-}
-.register-form {
-    /*max-width: 380px;*/
-    margin: 2rem auto 0;
-    gap: 0.35rem;
-}
-
-.register-form label {
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-}
-
-.register-form input {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.register-form button {
-    padding: 0.6rem 1.25rem;
-    font-size: 0.9rem;
-}
-
-/* Page d'erreur */
-main section.error {
-    text-align: center;
-    padding-top: 4rem;
-}
-
-/* Sections Accueil (Nos Services & À Propos) */
+/* Sections Nos Services & À Propos */
 .services-section,
 .about-section {
     margin-top: 3.5rem;
     padding-top: 2.5rem;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--border);
 }
 
+/* Nos Services */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.25rem;
     margin-top: 1.5rem;
 }
 
 .service-card {
     display: flex;
     flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
 }
 
 .service-img {
@@ -261,19 +284,18 @@ main section.error {
 
 .service-card h3 {
     margin: 0.5rem 0;
-    font-size: 1.15rem;
 }
 
 .service-card p {
     margin: 0;
-    font-size: 0.95rem;
-    color: var(--gray-dark);
+    font-size: 0.9rem;
 }
 
+/* À Propos */
 .about-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
     align-items: center;
 }
 
@@ -285,72 +307,67 @@ main section.error {
 
 .about-img {
     max-width: 100%;
-    max-height: 220px;
+    max-height: 240px;
     object-fit: contain;
     border-radius: 4px;
 }
 
-/*  Scroll to top */
-.scrollTop {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 3rem;
-    height: 3rem;
-    border: 1px solid var(--black);
-    border-radius: 50%;
+
+/* =====================================================
+   PAGES : LOGIN & INSCRIPTION (base des formulaires)
+   ===================================================== */
+
+form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-behavior: smooth;
-    background: var(--white);
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-.scrollTop .arrow {
-    border: solid var(--black);
-    border-width: 0 2px 2px 0;
-    padding: 4px;
-    transform: rotate(-135deg);
+form label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    display: block;
 }
 
-.scrollTop {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
 }
 
-.scrollTop.show {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
+form input::placeholder {
+    color: var(--text-muted);
 }
 
-.btn-danger{
-    background: #7B0000;
-    color :white;
-    border : none;
-    border-radius: 2px;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-.btn-danger :hover{
-    background: #b00020;
-    color :white;
-    border : none;
-    border-radius: 2px;
-    padding: 1rem;
-    margin-top: 2rem;
+form input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(31, 123, 255, 0.2);
 }
 
+
+/* =====================================================
+   PAGE : INSCRIPTION
+   ===================================================== */
+
+.register-form {
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+/* Indicateur de force du mot de passe */
 .password-meter {
     width: 100%;
-    max-width: 350px;
-    height: 8px;
+    height: 6px;
     margin-top: 10px;
-    background-color: #e5e7eb;
+    background-color: var(--border);
     border-radius: 5px;
     overflow: hidden;
 }
@@ -358,12 +375,14 @@ main section.error {
 #password-bar {
     width: 0;
     height: 100%;
-    background-color: #b91c1c;
+    background-color: var(--error);
     transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 #password-rules {
     padding-left: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 #password-rules li {
@@ -371,101 +390,107 @@ main section.error {
 }
 
 #password-rules .rule-valid {
-    color: #15803d;
+    color: var(--success);
     font-weight: bold;
 }
 
 
-/* Media Mobile */
-@media (max-width: 768px) {
+/* =====================================================
+   PAGE : PROFIL
+   ===================================================== */
+
+.profil-card,
+.profil-update {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+    margin-top: 2rem;
+}
+
+.btn-danger:hover {
+    background: var(--danger-hover);
+    border-color: var(--danger-hover);
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   PAGE : ERREUR
+   ===================================================== */
+
+main section.error {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+
+/* =====================================================
+   RESPONSIVE : TABLETTE (max-width: 1024px)
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
     header {
-        padding: 1rem 1.25rem;
         flex-wrap: wrap;
     }
 
-    header h1,
-    header .site-title {
-        font-size: 1.2rem;
-    }
-
-    /* Affichage du bouton burger sur smartphone */
-    .burger-btn {
-        display: flex;
-    }
-
-    /* Animation du burger en croix 'X' lors du clic */
-    .menu-toggle:checked + .burger-btn span:nth-child(1) {
-        transform: translateY(8.5px) rotate(45deg);
-    }
-
-    .menu-toggle:checked + .burger-btn span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle:checked + .burger-btn span:nth-child(3) {
-        transform: translateY(-8.5px) rotate(-45deg);
-    }
-
-    /* Menu déroulant sur mobile */
+    /* Les liens passent sur une 2e ligne sous le logo */
     .nav-menu {
-        display: none;
+        order: 3;
         width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        background: var(--black);
-        padding: 0.75rem 0 0.25rem 0;
-        margin-top: 1rem;
-        border-top: 1px solid #2a2a2a;
+        flex: none;
+        flex-wrap: wrap;
+        gap: 1.25rem;
     }
 
-    /* Déroulement du menu au clic */
-    .menu-toggle:checked ~ .nav-menu {
-        display: flex;
-        animation: menuFadeIn 0.25s ease-out forwards;
+    h1 {
+        font-size: 2.6rem;
     }
 
-    @keyframes menuFadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-6px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    .nav-menu a {
-        margin: 0;
-        padding: 0.85rem 0.5rem;
-        font-size: 1.05rem;
-        border-bottom: 1px solid #222;
-        display: block;
-        transition: background-color 0.2s ease, padding-left 0.2s ease;
-    }
 
-    .nav-menu a:hover {
-        background: #1f1f1f;
-        padding-left: 1rem;
-        border-bottom-color: #222;
-    }
+/* =====================================================
+   RESPONSIVE : MOBILE (max-width: 768px)
+   ===================================================== */
+
+@media (max-width: 768px) {
 
     main {
         padding: 2rem 1.25rem;
     }
 
-    form {
-        margin-top: 1.5rem;
+    h1 {
+        font-size: 2.1rem;
     }
 
-    form input,
-    form button {
-        font-size: 1rem;
+    h2 {
+        font-size: 1.5rem;
     }
 
+    header {
+        padding: 1rem 1.25rem;
+    }
+
+    /* Accueil : tout passe sur une seule colonne */
     .services-grid,
     .about-section {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+
+    .scrollTop {
+        bottom: 1rem;
+        right: 1rem;
     }
 }
