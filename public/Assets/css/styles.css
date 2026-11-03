@@ -207,7 +207,7 @@ main {
     width: 100%;
     max-width: var(--container);
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
 }
 
 main section {
@@ -425,12 +425,43 @@ form input:focus {
 /* =====================================================
    PAGE : INSCRIPTION
    ===================================================== */
+.register-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.item1{
+    border-bottom: 1px solid var(--border);
+}
+
+.item1 h2{
+    font-size: 2rem;
+}
+
+.item2{
+    width: 75%;
+    margin-top: 1.5rem;
+    align-self: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
 
 .register-form {
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
 /* Indicateur de force du mot de passe */
 .password-meter {
     width: 100%;
@@ -529,6 +560,23 @@ main section.error {
     .miniGames-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .register-container {
+        grid-template-columns: 2fr;
+        gap: 0;
+    }
+    .item1{
+        padding-top: 0;
+    }
+    .nav-auth a.btn {
+        margin-top: 0;
+    }
+
+    .item1{
+        padding-top: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
 }
 
 
@@ -571,6 +619,11 @@ main section.error {
         bottom: 1rem;
         right: 1rem;
     }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
     /* --- Menu burger --- */
 
     .burger-btn {
@@ -647,6 +700,12 @@ main section.error {
 
     .nav-auth a.btn {
         margin-top: 0;
+    }
+
+    .item1{
+        padding-top: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
     }
 
 }

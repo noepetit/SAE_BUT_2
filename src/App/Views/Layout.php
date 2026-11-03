@@ -30,7 +30,7 @@ public function show(): void
     <label for="menu-toggle" class="burger-btn">
         <span></span><span></span><span></span>
         <span class="sr-only">Ouvrir le menu</span>
-    </label>
+   </label>  <!--   aide IA pour enlever l'erreur dans le WAVE-->
     <div class="nav-menu">
         <a href="index.php">Accueil</a>
         <a href="index.php?action=miniGames">Mini-Jeux</a>
