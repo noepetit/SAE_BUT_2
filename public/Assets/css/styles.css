@@ -505,6 +505,7 @@ main section.error {
 
     header {
         padding: 1rem 1.25rem;
+        row-gap: 0;
     }
 
     /* Accueil : tout passe sur une seule colonne */
@@ -575,7 +576,25 @@ main section.error {
         justify-content: center;
         margin-top: 0.75rem;
     }
+
+    .nav-menu:not(.nav-auth) {
+        margin-top: 1rem;
+    }
+
+    /* Se connecter / S'inscrire : même ligne, collés sous le trait du menu */
     .nav-auth {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: 0;
         border-top: none;
+    }
+
+    .nav-auth a:not(.btn) {
+        border-bottom: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-auth a.btn {
+        margin-top: 0;
     }
 }

@@ -20,9 +20,7 @@ class HomeView
             <?php if (!isset($_SESSION['user_id'])): ?>
                 <a href="index.php?action=register" class="btn">S'inscrire</a>
             <?php endif; ?>
-            <?php if (!isset($_SESSION['user_id'])): ?>
-                <a href="index.php?action=miniGames" class="btn">Découvrir les Minis-Jeux</a>
-            <?php endif; ?>
+            <a href="index.php?action=miniGames" class="btn">Découvrir les Minis-Jeux</a>
         </div>
     </section>
 
