@@ -20,13 +20,12 @@ Un potentiel fichier indésirable et vous protéger de futures attaques.
 Et enfin, utilisez le site captain verify.
 
 2ème idée de mini-jeux (cryptographie) =
+Dans cette épreuve, nous allons découvrir le fonctionnement du code vigenère, L'attaque kasiski et le code césar. 
+Ici nous aurons besoin de deux équipes, une première équipe qui va vouloir transmettre un message codé à la deuxième équipe, la deuxième équipe va décoder ce message et en envoyer un autre coder également. 
+Ce message codé le sera à l'aide du code vigenère et l'équipe qui va vouloir le décoder va utiliser l'attaque de Kasiski et le code de César pour décoder ce message et obtenir le message envoyé par la première équipe avant le codage du message. 
+Pour vérifier si le message est le bon, la deuxième équipe doit déchiffrer un message initial coder grâce à césar par le premier groupe.
+ A la fin de l'épreuve, les deux équipes vont échanger leurs rôles.
 
-dans cette épreuve, nous allons découvrir le fonctionnement du code vigenaire,
-L'attaque kasiki et le code césar.
-Ici nous aurons besoin de deux équipes, une première équipe qui va vouloir transmettre un message codé à la deuxième équipe.
-Ce message codé le sera à l'aide du code vigenaire et l'équipe qui va vouloir le décoder va utiliser l'attaque de Kasiki et le code de César pour décoder ce message et obtenir le message envoyé par la première équipe avant le codage du message.
-Pour vérifier si le message est le bon, la deuxième équipe doit déchiffrer un message par substitution que le premier groupe aura codé grâce au code de substitution.
-A la fin de l'épreuve, les deux équipes vont échanger leurs rôles.
 
 Cours =
 Pour les cours, je propose de faire un résumé condensé du cours sur le code vigenaire, le code césar, l'attaque de Kasiki et le code de substitution.
