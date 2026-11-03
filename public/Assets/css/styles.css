@@ -588,7 +588,6 @@ main section.error {
     }
 
     .register-container {
-        grid-template-columns: 2fr;
         gap: 0;
     }
     .item1{
