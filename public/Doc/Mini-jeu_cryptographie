@@ -1,0 +1,27 @@
+Le code sera POULET, en partant de A=0 on a donc un décalage respectif de +15(P), +14(O),+20(U), +12(L), +4(E), +19(T) pour chaque mot que l’on voudra encoder.
+Le mot à coder sera : intrinsèque
+Le mot une fois codé ressemble à ça : xbndmghskgi
+
+
+Pour le code césar on part avec un décalage de 18 tout le long de l’exercice en partant du principe que A = 0.
+le mot a codé sera : compris
+Le mot une fois coder ressemble à ça : ugehjak
+
+Pour décoder le vigenaire on fera de la manière suivante : 
+La clé est : POULET
+Le mot codé est : xbndmghskgi
+
+Mission équipe 1 =
+A l’aide du code vigenaire et de la clé POULET, coder le mot suivant : intrinsèque.
+Puis envoyer ce message codé à l’autre équipe.
+Vous allez par la suite recevoir un message codé de l’autre équipe, une fois décodé, ce sera la fin de la manche.
+
+Mission équipe 2 =
+Le code vigenaire nous permet d’avoir un décalage intéressant car il n’est pas le même pour toutes les lettres comme dans le code de césar.
+Trouver avec la clé (POULET), le décalage de chaque lettre pour enlever ce décalage à chaque lettre du nouveau mot codé en sachant que A = 0.
+Une fois ceci fait, coder le mot “compris” avec la méthode de césar, puis envoyer le à l'équipe suivante.
+
+Les deux équipes échangent leurs rôles pour pouvoir utiliser toutes les techniques différentes mises à disposition pendant cet événement.
+
+Ce mini-jeu dure au maximum 20 minutes, avec le changement d’équipe compris.
+En prenant en compte la rotation des trois mini-jeux en parallèle et l’escape game à la fin.
