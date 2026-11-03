@@ -5,22 +5,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg: #040b1f;             /* Fond principal du site (bleu nuit très foncé), utilisé sur body, header, footer et champs de formulaire */
-    --bg-section: #061232;     /* Fond des grandes sections mises en avant (ex. bloc d'appel à l'action), un peu plus clair que --bg */
-    --bg-card: #0a1a44;        /* Fond des cartes et blocs (service-card, profil-card, scrollTop) */
-    --border: #1a2f6b;         /* Couleur des bordures : cartes, champs de formulaire, séparateurs de sections, header et footer */
-    --blue: #0048AD;           /* Bleu principal : fond des boutons, bordure au focus des champs */
-    --blue-hover: #4a95ff;     /* Bleu plus clair du bouton quand on le survole */
-    --cyan: #3cc8ff;           /* Couleur d'accent : survol des liens, soulignement du menu, flèche du scrollTop */
-    --text: #ffffff;           /* Couleur du texte principal et des titres */
-    --text-muted: #8fa4d4;     /* Texte secondaire : paragraphes, liens du menu, footer, placeholders */
-    --danger: #7b0000;         /* Rouge foncé du bouton de suppression (.btn-danger) */
-    --danger-hover: #b00020;   /* Rouge plus vif du bouton de suppression au survol */
-    --success: #2ecc71;        /* Vert des messages de succès (.suc) et des règles de mot de passe validées */
-    --error: #ff5c5c;          /* Rouge des messages d'erreur (.err) et de la barre de force du mot de passe */
-    --radius: 8px;             /* Arrondi des coins des cartes et blocs */
-    --container: 1200px;       /* Largeur maximale du contenu de la page (main) */
-    }
+    --bg: #0F172A;             /* Fond principal du site : body, header, footer, champs de formulaire */
+    --bg-card: #06163B;        /* Fond des cartes et blocs bleutés : service-card, profil-card, scrollTop */
+    --border: #1a2f6b;
+    --blue: #0048AD;
+    --blue-hover: #4a95ff;
+    --cyan: #3cc8ff;
+    --text: #ffffff;
+    --text-muted: #8fa4d4;
+    --danger: #7b0000;
+    --danger-hover: #b00020;
+    --success: #2ecc71;
+    --error: #ff5c5c;
+    --radius: 8px;
+    --container: 1200px;
+}
 
 * {
     box-sizing: border-box;
@@ -85,7 +84,7 @@ form button,
     background: var(--blue);
     color: var(--text);
     border: 1px solid var(--blue);
-    border-radius: 6px;
+    border-radius: var(--radius);
     font-family: inherit;
     font-size: 0.95rem;
     font-weight: 600;
@@ -146,26 +145,46 @@ header .site-title {
     padding: 0.25rem 0;
     border-bottom: 2px solid transparent;
 }
-.nav-menu a.btn {
-    /*margin-left: auto;          !* Pousse le bouton tout à droite du header *!*/
-    padding: 0.5rem 1.1rem;
-    font-size: 1rem;
-    color: var(--text);
-    border: 1px solid var(--blue);
-    border-radius: 6px;
-}
 
-.nav-menu a:hover {
+/* Survol des liens simples */
+.nav-menu a:not(.btn):hover {
     color: var(--text);
     border-bottom-color: var(--cyan);
 }
 
-/* Burger : masqué (la maquette affiche les liens en ligne sur tous les écrans) */
-.menu-toggle,
-.burger-btn {
-    display: none;
+/* Bouton "Inscription" du header */
+.nav-menu a.btn {
+    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    color: var(--text);
+    border: 1px solid var(--blue);
 }
 
+/* Menu burger (visible uniquement sur mobile, voir le media 768px) */
+.menu-toggle {
+    display: none;   /* La checkbox reste toujours cachée */
+}
+
+.burger-btn {
+    display: none;   /* Masqué sur grand écran */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.burger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
 /* =====================================================
    MAIN (commun à toutes les pages)
@@ -181,6 +200,10 @@ main {
 
 main section {
     margin-bottom: 4rem;
+}
+
+main section:last-of-type {
+    margin-bottom: 0;
 }
 
 
@@ -200,10 +223,6 @@ footer {
 footer a {
     color: var(--text-muted);
     text-decoration: underline;
-}
-
-footer a:hover {
-    color: var(--cyan);
 }
 
 
@@ -249,10 +268,17 @@ footer a:hover {
    PAGE : ACCUEIL
    ===================================================== */
 
+/* btn haut de page */
+.home-btn {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.3rem;
+}
+
 /* Sections Nos Services & À Propos */
 .services-section,
 .about-section {
-    margin-top: 3.5rem;
     padding-top: 2.5rem;
     border-top: 1px solid var(--border);
 }
@@ -278,7 +304,7 @@ footer a:hover {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: var(--radius);
     margin-bottom: 1rem;
 }
 
@@ -309,7 +335,7 @@ footer a:hover {
     max-width: 100%;
     max-height: 240px;
     object-fit: contain;
-    border-radius: 4px;
+    border-radius: var(--radius);
 }
 
 
@@ -335,7 +361,7 @@ form input {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: var(--radius);
     background: var(--bg);
     color: var(--text);
     font-family: inherit;
@@ -445,7 +471,6 @@ main section.error {
     .nav-menu {
         order: 3;
         width: 100%;
-        flex: none;
         flex-wrap: wrap;
         gap: 1.25rem;
     }
@@ -492,5 +517,65 @@ main section.error {
     .scrollTop {
         bottom: 1rem;
         right: 1rem;
+    }
+    /* --- Menu burger --- */
+
+    /* Affichage du bouton burger */
+    .burger-btn {
+        display: flex;
+    }
+
+    /* Animation du burger en croix "X" quand le menu est ouvert */
+    .menu-toggle:checked + .burger-btn span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .burger-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .burger-btn span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    /* Menu masqué par défaut, liens empilés verticalement */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+    }
+
+    /* Menu ouvert quand la checkbox est cochée */
+    .menu-toggle:checked ~ .nav-menu {
+        display: flex;
+        animation: menuFadeIn 0.25s ease-out forwards;
+    }
+
+    @keyframes menuFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-menu a:not(.btn) {
+        padding: 0.85rem 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* Bouton Inscription pleine largeur en bas du menu */
+    .nav-menu a.btn {
+        justify-content: center;
+        margin-top: 0.75rem;
+    }
+    .nav-auth {
+        border-top: none;
     }
 }
