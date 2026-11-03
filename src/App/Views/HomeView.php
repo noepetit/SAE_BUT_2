@@ -7,7 +7,8 @@ class HomeView
     public function show(): void
     {
         ob_start();
-        ?><section>
+        ?>
+    <section>
         <h1>CyberCigales</h1>
         <br>
         <h2>Découvrez des jeux ludiques sur la cybersécurité</h2>
@@ -21,6 +22,38 @@ class HomeView
                 <a href="index.php?action=register" class="btn">S'inscrire</a>
             <?php endif; ?>
             <a href="index.php?action=miniGames" class="btn">Découvrir les Minis-Jeux</a>
+        </div>
+    </section>
+
+    <section class="miniGames-section">
+        <h2>Nos Minis-Jeux</h2>
+        <div class="miniGames-container">
+            <div class="miniGames-btn">
+                <h3>01</h3>
+                <a>Cybersécurité</a>
+                <p>Phrase d'accorche à completer</p>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="index.php?action=miniGames1" class="btn">Mini-Jeu 1</a>
+                <?php endif; ?>
+            </div>
+
+            <div class="miniGames-btn">
+                <h3>02</h3>
+                <a>Cryptographie</a>
+                <p>Phrase d'accorche à completer</p>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="index.php?action=miniGames2" class="btn">Mini-Jeu 2</a>
+                <?php endif; ?>
+            </div>
+
+            <div class="miniGames-btn">
+                <h3>03</h3>
+                <a>GameShell</a>
+                <p>Phrase d'accorche à completer</p>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="index.php?action=miniGames3" class="btn">Mini-Jeu 3</a>
+                <?php endif; ?>
+            </div>
         </div>
     </section>
 

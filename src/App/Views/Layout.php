@@ -29,6 +29,7 @@ public function show(): void
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <label for="menu-toggle" class="burger-btn">
         <span></span><span></span><span></span>
+        <span class="sr-only">Ouvrir le menu</span>
     </label>
     <div class="nav-menu">
         <a href="index.php">Accueil</a>

@@ -5,18 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg: #0F172A;             /* Fond principal du site : body, header, footer, champs de formulaire */
-    --bg-card: #06163B;        /* Fond des cartes et blocs bleutés : service-card, profil-card, scrollTop */
-    --border: #1a2f6b;
-    --blue: #0048AD;
-    --blue-hover: #4a95ff;
-    --cyan: #3cc8ff;
-    --text: #ffffff;
-    --text-muted: #8fa4d4;
-    --danger: #7b0000;
-    --danger-hover: #b00020;
-    --success: #2ecc71;
-    --error: #ff5c5c;
+    --bg: #0F172A;            /* Bleu nuit grisé : fond de la page, du header, du footer et des champs de formulaire */
+    --bg-card: #06163B;       /* Bleu marine : fond des cartes (.service-card, .profil-card) et du bouton .scrollTop */
+    --border: #1a2f6b;        /* Bleu foncé : traits de séparation et bordures (cartes, champs, header, footer, menu mobile) */
+    --blue: #0048AD;          /* Bleu soutenu : fond des boutons, bordure des champs au focus */
+    --blue-hover: #4a95ff;    /* Bleu clair : fond des boutons au survol */
+    --cyan: #3cc8ff;          /* Cyan (accent) : liens au survol, trait sous le menu, flèche du .scrollTop */
+    --text: #ffffff;          /* Blanc : texte principal, titres, texte des boutons */
+    --text-muted: #8fa4d4;    /* Bleu-gris clair : paragraphes, liens du menu, footer, placeholders */
+    --danger: #7b0000;        /* Rouge sombre : bouton de suppression (.btn-danger) */
+    --danger-hover: #b00020;  /* Rouge vif : bouton de suppression au survol */
+    --success: #2ecc71;       /* Vert : messages de succès (.suc), règles de mot de passe validées */
+    --error: #ff5c5c;         /* Rouge clair : messages d'erreur (.err), barre de force du mot de passe */
     --radius: 8px;
     --container: 1200px;
 }
@@ -166,7 +166,8 @@ header .site-title {
 }
 
 .burger-btn {
-    display: none;   /* Masqué sur grand écran */
+    position: relative;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 28px;
@@ -184,6 +185,17 @@ header .site-title {
     background-color: var(--text);
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-btn .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    background: none;
 }
 
 /* =====================================================
@@ -276,6 +288,35 @@ footer a {
     margin-top: 1.3rem;
 }
 
+/* Section mini jeux*/
+.miniGames-section {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+
+}
+.miniGames-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+
+}
+.miniGames-btn {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.8rem 1.5rem;
+    gap: 1rem;
+}
+.miniGames-btn  h3{
+    font-size: 1.7rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+
 /* Sections Nos Services & À Propos */
 .services-section,
 .about-section {
@@ -337,6 +378,8 @@ footer a {
     object-fit: contain;
     border-radius: var(--radius);
 }
+
+
 
 
 /* =====================================================
