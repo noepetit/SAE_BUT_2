@@ -25,7 +25,7 @@ public function show(): void
 </head>
 <body id="top">
 <header>
-    <a href="index.php" class="site-title">CyberCigales</a>
+    <a href="index.php" class="site-title">CyberScape</a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <label for="menu-toggle" class="burger-btn">
         <span></span><span></span><span></span>

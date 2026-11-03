@@ -10,6 +10,7 @@ class RegisterView
 <section class="register-section">
     <div class="register-container">
         <div class="item1">
+            <h1>Inscription</h1>
             <h2>L'aventure commence ici !</h2>
             <p>Inscrit toi pour pouvoir participer au jeu et pouvoir sauvegarder ta progression.</p>
         </div>
@@ -64,9 +65,9 @@ class RegisterView
                         Saisissez un mot de passe.
                     </p>
                     <ul id="password-rules">
-                        <li id="rule-length">Au moins 8 caractères</li>
-                        <li id="rule-uppercase">Une majuscule de A à Z</li>
-                        <li id="rule-special">Un caractère parmi ! @ # $ % &amp; * ?</li>
+                        <li id="rule-length">Au moins <strong>8</strong> caractères</li>
+                        <li id="rule-uppercase">Une majuscule de <strong>'A à Z'</strong></li>
+                        <li id="rule-special">Un caractère parmi {<strong> ! @ # $ % &amp; * ? </strong>} </li>
                     </ul>
                     <?php if (isset($this->errors['password'])) : ?>
                         <p><?= htmlspecialchars($this->errors['password']) ?></p>

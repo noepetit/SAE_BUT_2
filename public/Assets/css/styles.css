@@ -390,7 +390,6 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1.5rem;
 }
 
 form label {
@@ -421,6 +420,25 @@ form input:focus {
     box-shadow: 0 0 0 3px rgba(31, 123, 255, 0.2);
 }
 
+.login-container {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.login-container button {
+    margin-top: 1rem;
+}
+
+.login-container label {
+    font-size: 1rem;
+}
+
 
 /* =====================================================
    PAGE : INSCRIPTION
@@ -428,6 +446,9 @@ form input:focus {
 .register-container {
     display: flex;
     flex-direction: column;
+}
+.register-container label {
+    font-size: 1rem;
 }
 
 .item1{
@@ -439,7 +460,7 @@ form input:focus {
 }
 
 .item2{
-    width: 75%;
+    width: 80%;
     margin-top: 1.5rem;
     align-self: center;
     background: var(--bg-card);
@@ -506,12 +527,17 @@ form input:focus {
     border-radius: var(--radius);
     padding: 2rem;
     margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.profil-update label {
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 
 .btn-danger {
     background: var(--danger);
     border-color: var(--danger);
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .btn-danger:hover {
