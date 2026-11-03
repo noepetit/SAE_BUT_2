@@ -7,18 +7,48 @@ class HomeView
     public function show(): void
     {
         ob_start();
-        ?><section>
-        <h1>CyberCigales</h1>
+        ?>
+    <section>
+        <h1>CyberScape</h1>
         <br>
         <h2>Découvrez des jeux ludiques sur la cybersécurité</h2>
-        <p>Découvrez l'univers de cybercigales à travers nos jeux ludiques.<br>
+        <p>Découvrez l'univers de CyberScape à travers nos jeux ludiques.<br>
             L'expérience que nous proposons est une initiation à la cybersécurité à travers des jeux ludiques.<br>
             Le jeu est un escape game sous forme de CTF (Capture The Flag) : le premier à trouver et prendre le drapeau de l'adversaire gagne.<br>
             Pour cela vous devez réaliser une série d'épreuves qui vous mèneront au drapeau de l'adversaire.
         </p>
-        <?php if (!isset($_SESSION['user_id'])): ?>
-            <a href="index.php?action=register" class="btn">S'inscrire</a>
-        <?php endif; ?>
+        <div class="home-btn">
+            <?php if (!isset($_SESSION['user_id'])): ?>
+                <a href="index.php?action=register" class="btn">S'inscrire</a>
+            <?php endif; ?>
+            <a href="index.php?action=miniGames" class="btn">Découvrir les Minis-Jeux</a>
+        </div>
+    </section>
+
+    <section class="miniGames-section">
+        <h2>Nos Minis-Jeux</h2>
+        <div class="miniGames-container">
+            <div class="miniGames-btn">
+                <h3>01</h3>
+                <a>Cybersécurité</a>
+                <p>Phrase d'accorche à completer</p>
+                    <a href="index.php?action=miniGames1" class="btn">Mini-Jeu 1</a>
+            </div>
+
+            <div class="miniGames-btn">
+                <h3>02</h3>
+                <a>Cryptographie</a>
+                <p>Phrase d'accorche à completer</p>
+                    <a href="index.php?action=miniGames2" class="btn">Mini-Jeu 2</a>
+            </div>
+
+            <div class="miniGames-btn">
+                <h3>03</h3>
+                <a>GameShell</a>
+                <p>Phrase d'accorche à completer</p>
+                    <a href="index.php?action=miniGames3" class="btn">Mini-Jeu 3</a>
+            </div>
+        </div>
     </section>
 
     <section class="services-section">
@@ -45,8 +75,8 @@ class HomeView
 
     <section class="about-section">
         <div class="about-content">
-            <h2>À Propos de CyberCigales</h2>
-            <p>CyberCigales est une plateforme dédiée à l'apprentissage de la cybersécurité à travers des jeux ludiques. Notre objectif est de rendre l'apprentissage de la cybersécurité accessible pour tous. Site conçu dans le cadre du projet développement web et de la SAE 2ème année.</p>
+            <h2>À Propos de CyberScape</h2>
+            <p>CyberScape est une plateforme dédiée à l'apprentissage de la cybersécurité à travers des jeux ludiques. Notre objectif est de rendre l'apprentissage de la cybersécurité accessible pour tous. Site conçu dans le cadre du projet développement web et de la SAE 2ème année.</p>
         </div>
         <div class="about-media">
             <img src="/Assets/Images/favicon.png" alt="Logo CyberCigales" class="about-img" loading="lazy">

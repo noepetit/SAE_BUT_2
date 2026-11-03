@@ -19,17 +19,17 @@ class ProfileView
                 <p class="suc"><?= htmlspecialchars($this->success)?></p>
             <?php endif; ?>
             <div class="profil-card">
-                <p><strong>Prénom :</strong> <?= htmlspecialchars($this->user->first_name) ?></p>
-                <p><strong>Nom :</strong> <?= htmlspecialchars($this->user->last_name) ?></p>
-                <p><strong>Email :</strong> <?= htmlspecialchars($this->user->email) ?></p>
-                <p><strong>Pseudo :</strong> <?= htmlspecialchars($this->user->username) ?></p>
+                <p><strong>Prénom :</strong><a> <?= htmlspecialchars($this->user->first_name) ?></a></p>
+                <p><strong>Nom :</strong><a> <?= htmlspecialchars($this->user->last_name) ?></a></p>
+                <p><strong>Email :</strong><a> <?= htmlspecialchars($this->user->email) ?></a></p>
+                <p><strong>Pseudo :</strong><a> <?= htmlspecialchars($this->user->username) ?></a></p>
             </div>
-            <p><strong>Modification Profile :</strong></p>
+            <h2><strong>Modification Profile :</strong></h2>
             <div class="profil-update">
                 <form method="post" action="index.php?action=profile">
                     <label for="username"><strong>Pseudo :</strong></label>
                     <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>
-                    <button type="submit" name="update_username">Enregistrer</button>
+                    <button type="submit" name="update_username" class="btn">Enregistrer</button>
                 </form>
             </div>
 

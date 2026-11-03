@@ -5,22 +5,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg: #040b1f;             /* Fond principal du site (bleu nuit très foncé), utilisé sur body, header, footer et champs de formulaire */
-    --bg-section: #061232;     /* Fond des grandes sections mises en avant (ex. bloc d'appel à l'action), un peu plus clair que --bg */
-    --bg-card: #0a1a44;        /* Fond des cartes et blocs (service-card, profil-card, scrollTop) */
-    --border: #1a2f6b;         /* Couleur des bordures : cartes, champs de formulaire, séparateurs de sections, header et footer */
-    --blue: #0048AD;           /* Bleu principal : fond des boutons, bordure au focus des champs */
-    --blue-hover: #4a95ff;     /* Bleu plus clair du bouton quand on le survole */
-    --cyan: #3cc8ff;           /* Couleur d'accent : survol des liens, soulignement du menu, flèche du scrollTop */
-    --text: #ffffff;           /* Couleur du texte principal et des titres */
-    --text-muted: #8fa4d4;     /* Texte secondaire : paragraphes, liens du menu, footer, placeholders */
-    --danger: #7b0000;         /* Rouge foncé du bouton de suppression (.btn-danger) */
-    --danger-hover: #b00020;   /* Rouge plus vif du bouton de suppression au survol */
-    --success: #2ecc71;        /* Vert des messages de succès (.suc) et des règles de mot de passe validées */
-    --error: #ff5c5c;          /* Rouge des messages d'erreur (.err) et de la barre de force du mot de passe */
-    --radius: 8px;             /* Arrondi des coins des cartes et blocs */
-    --container: 1200px;       /* Largeur maximale du contenu de la page (main) */
-    }
+    --bg: #0F172A;            /* Bleu nuit grisé : fond de la page, du header, du footer et des champs de formulaire */
+    --bg-card: #06163B;       /* Bleu marine : fond des cartes (.service-card, .profil-card) et du bouton .scrollTop */
+    --border: #1a2f6b;        /* Bleu foncé : traits de séparation et bordures (cartes, champs, header, footer, menu mobile) */
+    --blue: #0048AD;          /* Bleu soutenu : fond des boutons, bordure des champs au focus */
+    --blue-hover: #4a95ff;    /* Bleu clair : fond des boutons au survol */
+    --cyan: #3cc8ff;          /* Cyan (accent) : liens au survol, trait sous le menu, flèche du .scrollTop */
+    --text: #ffffff;          /* Blanc : texte principal, titres, texte des boutons */
+    --text-muted: #8fa4d4;    /* Bleu-gris clair : paragraphes, liens du menu, footer, placeholders */
+    --danger: #7b0000;        /* Rouge sombre : bouton de suppression (.btn-danger) */
+    --danger-hover: #b00020;  /* Rouge vif : bouton de suppression au survol */
+    --success: #2ecc71;       /* Vert : messages de succès (.suc), règles de mot de passe validées */
+    --error: #ff5c5c;         /* Rouge clair : messages d'erreur (.err), barre de force du mot de passe */
+    --radius: 8px;
+    --container: 1200px;
+}
 
 * {
     box-sizing: border-box;
@@ -85,7 +84,7 @@ form button,
     background: var(--blue);
     color: var(--text);
     border: 1px solid var(--blue);
-    border-radius: 6px;
+    border-radius: var(--radius);
     font-family: inherit;
     font-size: 0.95rem;
     font-weight: 600;
@@ -146,26 +145,58 @@ header .site-title {
     padding: 0.25rem 0;
     border-bottom: 2px solid transparent;
 }
-.nav-menu a.btn {
-    /*margin-left: auto;          !* Pousse le bouton tout à droite du header *!*/
-    padding: 0.5rem 1.1rem;
-    font-size: 1rem;
-    color: var(--text);
-    border: 1px solid var(--blue);
-    border-radius: 6px;
-}
 
-.nav-menu a:hover {
+/* Survol des liens simples */
+.nav-menu a:not(.btn):hover {
     color: var(--text);
     border-bottom-color: var(--cyan);
 }
 
-/* Burger : masqué (la maquette affiche les liens en ligne sur tous les écrans) */
-.menu-toggle,
-.burger-btn {
+/* Bouton "Inscription" du header */
+.nav-menu a.btn {
+    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    color: var(--text);
+    border: 1px solid var(--blue);
+}
+
+/* Menu burger (visible uniquement sur mobile, voir le media 768px) */
+.menu-toggle {
     display: none;
 }
 
+.burger-btn {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.burger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-btn .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    background: none;
+}
 
 /* =====================================================
    MAIN (commun à toutes les pages)
@@ -176,11 +207,15 @@ main {
     width: 100%;
     max-width: var(--container);
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
 }
 
 main section {
     margin-bottom: 4rem;
+}
+
+main section:last-of-type {
+    margin-bottom: 0;
 }
 
 
@@ -200,10 +235,6 @@ footer {
 footer a {
     color: var(--text-muted);
     text-decoration: underline;
-}
-
-footer a:hover {
-    color: var(--cyan);
 }
 
 
@@ -249,10 +280,46 @@ footer a:hover {
    PAGE : ACCUEIL
    ===================================================== */
 
+/* btn haut de page */
+.home-btn {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.3rem;
+}
+
+/* Section mini jeux*/
+.miniGames-section {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+
+}
+.miniGames-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+}
+.miniGames-btn {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.8rem 1.5rem;
+    gap: 1rem;
+}
+.miniGames-btn  h3{
+    font-size: 1.7rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+
 /* Sections Nos Services & À Propos */
 .services-section,
 .about-section {
-    margin-top: 3.5rem;
     padding-top: 2.5rem;
     border-top: 1px solid var(--border);
 }
@@ -278,7 +345,7 @@ footer a:hover {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: var(--radius);
     margin-bottom: 1rem;
 }
 
@@ -309,8 +376,10 @@ footer a:hover {
     max-width: 100%;
     max-height: 240px;
     object-fit: contain;
-    border-radius: 4px;
+    border-radius: var(--radius);
 }
+
+
 
 
 /* =====================================================
@@ -321,7 +390,6 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1.5rem;
 }
 
 form label {
@@ -335,7 +403,7 @@ form input {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: var(--radius);
     background: var(--bg);
     color: var(--text);
     font-family: inherit;
@@ -352,16 +420,69 @@ form input:focus {
     box-shadow: 0 0 0 3px rgba(31, 123, 255, 0.2);
 }
 
+.login-container {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.login-container button {
+    margin-top: 1rem;
+}
+
+.login-container label {
+    font-size: 1rem;
+}
+
 
 /* =====================================================
    PAGE : INSCRIPTION
    ===================================================== */
+.register-container {
+    display: flex;
+    flex-direction: column;
+}
+.register-container label {
+    font-size: 1rem;
+}
+
+.item1{
+    border-bottom: 1px solid var(--border);
+}
+
+.item1 h2{
+    font-size: 2rem;
+}
+
+.item2{
+    width: 80%;
+    margin-top: 1.5rem;
+    align-self: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
 
 .register-form {
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
 /* Indicateur de force du mot de passe */
 .password-meter {
     width: 100%;
@@ -406,12 +527,17 @@ form input:focus {
     border-radius: var(--radius);
     padding: 2rem;
     margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.profil-update label {
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 
 .btn-danger {
     background: var(--danger);
     border-color: var(--danger);
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .btn-danger:hover {
@@ -445,7 +571,6 @@ main section.error {
     .nav-menu {
         order: 3;
         width: 100%;
-        flex: none;
         flex-wrap: wrap;
         gap: 1.25rem;
     }
@@ -457,7 +582,28 @@ main section.error {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .miniGames-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .register-container {
+        gap: 0;
+    }
+    .item1{
+        padding-top: 0;
+    }
+    .nav-auth a.btn {
+        margin-top: 0;
+    }
+
+    .item1{
+        padding-top: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
 }
+
 
 
 /* =====================================================
@@ -480,6 +626,7 @@ main section.error {
 
     header {
         padding: 1rem 1.25rem;
+        row-gap: 0;
     }
 
     /* Accueil : tout passe sur une seule colonne */
@@ -489,8 +636,101 @@ main section.error {
         gap: 1.5rem;
     }
 
+    .miniGames-container {
+        grid-template-columns: 1fr;
+    }
+
     .scrollTop {
         bottom: 1rem;
         right: 1rem;
     }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Menu burger --- */
+
+    .burger-btn {
+        display: flex;
+    }
+
+    /* Animation du burger en croix "X" quand le menu est ouvert */
+    .menu-toggle:checked + .burger-btn span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .burger-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .burger-btn span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    /* Menu masqué par défaut, liens empilés verticalement */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+    }
+
+    /* Menu ouvert quand la checkbox est cochée */
+    .menu-toggle:checked ~ .nav-menu {
+        display: flex;
+        animation: menuFadeIn 0.25s ease-out forwards;
+    }
+
+    @keyframes menuFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-menu a:not(.btn) {
+        padding: 0.85rem 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* Bouton Inscription pleine largeur en bas du menu */
+    .nav-menu a.btn {
+        justify-content: center;
+        margin-top: 0.75rem;
+    }
+
+    .nav-menu:not(.nav-auth) {
+        margin-top: 1rem;
+    }
+
+    /* Se connecter / S'inscrire : même ligne, collés sous le trait du menu */
+    .nav-auth {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .nav-auth a:not(.btn) {
+        border-bottom: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-auth a.btn {
+        margin-top: 0;
+    }
+
+    .item1{
+        padding-top: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
 }
