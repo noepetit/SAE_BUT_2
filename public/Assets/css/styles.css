@@ -162,7 +162,7 @@ header .site-title {
 
 /* Menu burger (visible uniquement sur mobile, voir le media 768px) */
 .menu-toggle {
-    display: none;   /* La checkbox reste toujours cachée */
+    display: none;
 }
 
 .burger-btn {
@@ -295,8 +295,8 @@ footer a {
 
 }
 .miniGames-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 
 }
@@ -525,7 +525,12 @@ main section.error {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .miniGames-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
 
 
 /* =====================================================
@@ -558,13 +563,16 @@ main section.error {
         gap: 1.5rem;
     }
 
+    .miniGames-container {
+        grid-template-columns: 1fr;
+    }
+
     .scrollTop {
         bottom: 1rem;
         right: 1rem;
     }
     /* --- Menu burger --- */
 
-    /* Affichage du bouton burger */
     .burger-btn {
         display: flex;
     }
@@ -640,4 +648,5 @@ main section.error {
     .nav-auth a.btn {
         margin-top: 0;
     }
+
 }
