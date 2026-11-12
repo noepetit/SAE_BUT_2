@@ -25,19 +25,19 @@ public function show(): void
 </head>
 <body id="top">
 <header>
-    <a href="index.php" class="site-title">CyberCigales</a>
-    <label for="menu-toggle" class="burger-btn" aria-label="Ouvrir Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
+    <a href="index.php" class="site-title">CyberScape</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="burger-btn">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Ouvrir le menu</span>
+   </label>  <!--   aide IA pour enlever l'erreur dans le WAVE-->
     <div class="nav-menu">
         <a href="index.php">Accueil</a>
         <a href="index.php?action=miniGames">Mini-Jeux</a>
         <a href="index.php?action=OurServices">Nos Services</a>
         <a href="index.php?action=about">À Propos</a>
     </div>
-    <nav class="nav-menu">
+    <nav class="nav-menu nav-auth">
         <?php if (isset($_SESSION['user_id'])): ?>
             <!-- Page dispo connecté -->
             <a href="index.php?action=profile">Profil</a>
