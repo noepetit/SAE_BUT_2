@@ -18,14 +18,14 @@ class ProfileView
             <?php if ($this->success != null) : ?>
                 <p class="suc"><?= htmlspecialchars($this->success)?></p>
             <?php endif; ?>
-            <div class="profil-card">
+            <div class="profile-card">
                 <p><strong>Prénom :</strong><a> <?= htmlspecialchars($this->user->first_name) ?></a></p>
                 <p><strong>Nom :</strong><a> <?= htmlspecialchars($this->user->last_name) ?></a></p>
                 <p><strong>Email :</strong><a> <?= htmlspecialchars($this->user->email) ?></a></p>
                 <p><strong>Pseudo :</strong><a> <?= htmlspecialchars($this->user->username) ?></a></p>
             </div>
             <h2><strong>Modification Profile :</strong></h2>
-            <div class="profil-update">
+            <div class="profile-update">
                 <form method="post" action="index.php?action=profile">
                     <label for="username"><strong>Pseudo :</strong></label>
                     <input type="text" id="username" name="username" value="<?= htmlspecialchars($this->user->username) ?>" required>

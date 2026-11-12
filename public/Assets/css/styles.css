@@ -6,7 +6,7 @@
 
 :root {
     --bg: #0F172A;            /* Bleu nuit grisé : fond de la page, du header, du footer et des champs de formulaire */
-    --bg-card: #06163B;       /* Bleu marine : fond des cartes (.service-card, .profil-card) et du bouton .scrollTop */
+    --bg-card: #06163B;       /* Bleu marine : fond des cartes (.service-card, .profile-card) et du bouton .scrollTop */
     --border: #1a2f6b;        /* Bleu foncé : traits de séparation et bordures (cartes, champs, header, footer, menu mobile) */
     --blue: #0048AD;          /* Bleu soutenu : fond des boutons, bordure des champs au focus */
     --blue-hover: #4a95ff;    /* Bleu clair : fond des boutons au survol */
@@ -309,7 +309,13 @@ footer a {
     border-radius: var(--radius);
     padding: 0.8rem 1.5rem;
     gap: 1rem;
+    transition: border-color 0.3s ease, background-color 0.4s ease;
 }
+.miniGames-btn:hover {
+    border-color: var(--blue-hover);
+    background: #152C56;
+}
+
 .miniGames-btn  h3{
     font-size: 1.7rem;
     color: var(--text);
@@ -520,8 +526,8 @@ form input:focus {
    PAGE : PROFIL
    ===================================================== */
 
-.profil-card,
-.profil-update {
+.profile-card,
+.profile-update {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -529,7 +535,7 @@ form input:focus {
     margin-bottom: 1.5rem;
     font-size: 1rem;
 }
-.profil-update label {
+.profile-update label {
     font-size: 1rem;
     color: var(--text-muted);
 }
